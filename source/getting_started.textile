@@ -73,8 +73,10 @@ h4. Installing Rails
 In most cases, the easiest way to install Rails is to take advantage of RubyGems:
 
 <shell>
-$ gem install rails
+$ gem install rails -v=3.1.4
 </shell>
+
+NOTE: Spree 1.0.x supports Rails from 3.1.1 to 3.1.4 only.
 
 h4. Installing Bundler
 
@@ -123,8 +125,11 @@ This creates a new Rails application using all of the default options (including
 For example, to create your application using Mysql you use the following command instead:
 
 <shell>
-rails new mystore -d mysql
+rails _3.1.4_ new mystore -d mysql
 </shell>
+
+NOTE: Rails version 3.1.4 is delcared explicitly in order to avoid generating the
+application with newer Rails 3.2.x which is not compatible.
 
 Here is a complete list of database options
 
