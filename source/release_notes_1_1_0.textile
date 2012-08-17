@@ -55,6 +55,12 @@ As a part of this, the +spree/spree_api+ assets are no longer available, and so 
 
 h3. Minor changes
 
+h4. Introduce Spree::Product#master_images and Spree::Product#variant_images
+
++Spree::Product#master_images+ and its alias +Spree::Product#images+ only returns images belongs to master variant.
+
++Spree::Product#variant_images+ behaviour is changed, it is no longer return only images belongs to master variants but now also include all variants' images.
+
 h4. New option for Heroku deploys
 
 When deploying to Heroku, you may have encountered "an issue":https://github.com/spree/spree/issues/1159 where, by setting +config.assets.initialize_on_precompile = false+ in your +config/application.rb+, the Spree assets were no longer being compiled. This has now been "fixed". Underneath the +config.assets.initialize_on_precompile+ line, you will need to put this additional line to tell the asset pipeline to include all of Spree's assets:
