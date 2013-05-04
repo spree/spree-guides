@@ -64,7 +64,7 @@ present.
 
 h3. Configuring an Installed Gateway
 
-You can select and configure the default gateway via the Payment Methods section of the Configuration menu. You are able to configure several different gateways at once. The typical use case for this is when you would like to use your gateway with different settings in development vs. production mode.
+You can select and configure the default gateway via the Payment Methods section of the Configuration menu.
 
 You are able to configure several different gateways at once.  The typical
 use case for this is when you would like to use your gateway with different
