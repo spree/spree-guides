@@ -5,6 +5,7 @@
     <title><%= "#{yield(:page_title)} | Open Source Guides" || 'Spree guides' %></title>
     <link rel="stylesheet" type="text/css" href="stylesheets/reset.css" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+    <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.3.1/jquery.cookie.min.js"></script>
     <script type='text/javascript' src='http://use.typekit.com/yem0gjc.js'></script>
     <script type='text/javascript'>try{Typekit.load();}catch(e){}</script>
     <link rel="stylesheet" type="text/css" href="stylesheets/syntaxhighlighter/shCore.css" />
@@ -136,30 +137,36 @@
 
     <script type="text/javascript">
       $(document).ready(function(){
-        var widget = $("#share-window");
+        var sc_banner_state = $.cookie('sc_banner_state');
+        if (new Date().valueOf() < new Date('2013/05/19').valueOf()) {
+          if(sc_banner_state != 'closed') {
+            var widget = $("#share-window");
 
-        $("#share-window a.close-widget").click(function(e){
-          e.preventDefault();
-          widget.animate({
-            bottom: "-400px",
-            opacity: 0
-          }, 1000)
-        });
-
-        $(window).scroll(function(){
-          if($.browser.webkit) {
-            var scroll_top = $('body').scrollTop();
-          }
-          else {
-            var scroll_top = document.documentElement.scrollTop;
-          }
-          if(scroll_top > $(window).height()){
-            widget.animate({
-              bottom: "-5px"
+            $("#share-window a.close-widget").click(function(e){
+              e.preventDefault();
+              widget.animate({
+                bottom: "-400px",
+                opacity: 0
+              }, 1000);
+              $.cookie('sc_banner_state', 'closed', { path: '/' });
             });
-            $(window).unbind('scroll');
+
+            $(window).scroll(function(){
+              if($.browser.webkit) {
+                var scroll_top = $('body').scrollTop();
+              }
+              else {
+                var scroll_top = document.documentElement.scrollTop;
+              }
+              if(scroll_top > $(window).height()){
+                widget.animate({
+                  bottom: "-5px"
+                });
+                $(window).unbind('scroll');
+              }
+            });
           }
-        });
+        }
       });
     </script>
 
