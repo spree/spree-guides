@@ -13,10 +13,19 @@
     <link rel='stylesheet' type='text/css' href='stylesheets/overrides.style.css' />
     <link rel='stylesheet' type='text/css' href='stylesheets/guides.css' />
     <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-  </head>
     <!--[if IE]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script type="text/javascript">
+    $(function(){
+      $.ajax({
+        url: document.location.protocol + '//munchkin.marketo.net/munchkin.js',
+        dataType: 'script',
+        cache: true,
+        success: function() { Munchkin.init('893-PDJ-826'); }
+      });
+    });
+    </script>
   </head>
   <body>
     <% if @edge %>
