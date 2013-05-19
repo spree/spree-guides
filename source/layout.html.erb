@@ -92,22 +92,6 @@
           </div>
         </div>
 
-        <% unless @show_popup == false %>
-          <div id="share-window">
-            <a class="close-widget" href="#">x</a>
-
-              <h4 class="title">Want to learn more about Spree?</h4>
-              <img src="images/spreeconf-badge.jpg" alt="Spree Conf DC">
-              <h2>May 20 - 21</h2>
-              <h3>Washington, DC</h3>
-
-            <p>
-              Save $75 with code <strong>"GUIDES"</strong>
-            </p>
-            <a href="http://spreeconf.com" target="_blank" class="button">Learn More</a>
-          </div>
-        <% end %>
-
       </div>
     </div>
   </div>
@@ -142,41 +126,6 @@
     <script type="text/javascript" src="javascripts/syntaxhighlighter/shBrushPlain.js"></script>
     <script type="text/javascript">
       SyntaxHighlighter.all()
-    </script>
-
-    <script type="text/javascript">
-      $(document).ready(function(){
-        var sc_banner_state = $.cookie('sc_banner_state');
-        if (new Date().valueOf() < new Date('2013/05/19').valueOf()) {
-          if(sc_banner_state != 'closed') {
-            var widget = $("#share-window");
-
-            $("#share-window a.close-widget").click(function(e){
-              e.preventDefault();
-              widget.animate({
-                bottom: "-400px",
-                opacity: 0
-              }, 1000);
-              $.cookie('sc_banner_state', 'closed', { path: '/' });
-            });
-
-            $(window).scroll(function(){
-              if($.browser.webkit) {
-                var scroll_top = $('body').scrollTop();
-              }
-              else {
-                var scroll_top = document.documentElement.scrollTop;
-              }
-              if(scroll_top > $(window).height()){
-                widget.animate({
-                  bottom: "-5px"
-                });
-                $(window).unbind('scroll');
-              }
-            });
-          }
-        }
-      });
     </script>
 
     <% if @ga %>
