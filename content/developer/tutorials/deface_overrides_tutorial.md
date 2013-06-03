@@ -20,18 +20,16 @@ As an example, let's look at what it would take to customize the Checkout Regist
 Here is what the erb template looks like in Spree:
 
 ```erb
-<%%= render :partial => 'spree/shared/error_messages',
-  :locals => { :target => @user } %>
-<h2><%%= t(:registration) %></h2>
+<%%= render 'spree/shared/error_messages', :target => @user %>
+<h2><%%= Spree.t(:registration) %></h2>
 <div id="registration" data-hook>
   <div id="account" class="columns alpha eight">
     <!-- TODO: add partial with registration form -->
   </div>
   <%% if Spree::Config[:allow_guest_checkout] %>
     <div id="guest_checkout" data-hook class="columns omega eight">
-      <%%= render :partial => 'spree/shared/error_messages',
-        :locals => { :target => @order } %>
-      <h2><%%= t(:guest_user_account) %></h2>
+      <%%= render 'spree/shared/error_messages', :target => @order %>
+      <h2><%%= Spree.t(:guest_user_account) %></h2>
       <%%= form_for @order, :url => update_checkout_registration_path, :method => :put,
         :html => { :id => 'checkout_form_registration' } do |f| %>
         <p>
@@ -113,8 +111,8 @@ So we want to override `spree/admin/products/_form.html.erb`. Here is the part o
 ```erb
 <div class="right four columns omega" data-hook="admin_product_form_right">
 <%%= f.field_container :price do %>
-    <%%= f.label :price, raw(t(:master_price) + content_tag(:span, ' *',
-      :class => "required")) %>
+    <%%= f.label :price, raw(Spree.t(:master_price) + content_tag(:span, ' *',
+     :class => 'required')) %>
     <%%= f.text_field :price, :value => number_to_currency(@product.price,
       :unit => '') %>
     <%%= f.error_message_on :price %>
@@ -123,8 +121,8 @@ So we want to override `spree/admin/products/_form.html.erb`. Here is the part o
 We want our override to insert another field container after the price field container. We can do this by creating a new file `app/overrides/add_sale_price_to_product_edit.rb` and adding the following content:
 
 ```ruby
-Deface::Override.new(:virtual_path => "spree/admin/products/_form",
-  :name => "add_sale_price_to_product_edit",
+Deface::Override.new(:virtual_path => 'spree/admin/products/_form',
+  :name => 'add_sale_price_to_product_edit',
   :insert_after => "code[erb-loud]:contains('text_field :price')",
   :text => "
     <%%= f.field_container :sale_price do %>
