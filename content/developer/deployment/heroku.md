@@ -33,7 +33,7 @@ If you are not using Spree 2.0.0 and above, then you can safely ignore this sect
 Spree 2.0.0 requires a version of Ruby greater than or equal to Ruby 1.9.3. By default, Heroku uses Ruby 1.9.2, which *will not work* with Spree. To force Heroku to use Ruby 1.9.3, put this line in your Gemfile:
 
 ```ruby
-gem 'ruby', '1.9.3'```
+ruby '1.9.3'```
 
 ### Asset Pipeline
 
