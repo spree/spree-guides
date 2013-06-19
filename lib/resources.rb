@@ -365,6 +365,12 @@ module Spree
         "special_instructions"=>nil,
       }
 
+    ORDER_FAILED_TRANSITION = {
+      "error" => "The order could not be transitioned. Please fix the errors and try again.",
+      "errors" => { :email => ["can't be blank"] }
+    }
+
+
 
     ADJUSTMENT =
     {
@@ -403,6 +409,10 @@ module Spree
         "variant_id"=>1,
         "variant" => line_item_variant
       }
+
+    ORDER_WITH_LINE_ITEMS = ORDER.merge({
+      "line_items" => [LINE_ITEM]
+    })
 
     PAYMENT =
       {
