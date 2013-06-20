@@ -19,13 +19,13 @@ Products have the following attributes:
 
 To understand how variants come to be, you must first understand option types and option values.
 
-## <a id="option_type"></a>Option Types and Option Values
+## Option Types and Option Values
 
 Option types denote the different options for a variant. A typical option type would be a size, with that option type's values being something such as "Small", "Medium" and "Large". Another typical option type could be a color, such as "Red", "Green", or "Blue".
 
 A product can be assigned many option types, but must be assigned at least one if you wish to create variants for that product.
 
-## <a id="variants"></a>Variants
+## Variants
 
 `Variant` records track the individual variants of a `Product`. Variants are of two types: master variants and normal variants.
 
@@ -67,7 +67,7 @@ Spree automatically handles creation and storage of several size versions of eac
 
 These sizes can be changed by altering the value of `Spree::Config[:attachment_styles]`. (TODO: information about regenerating existing images)
 
-## <a id="product-properties"></a>Product Properties
+## Product Properties
 
 Product properties track individual attributes for a product which don't apply to all products. These are typically additional information about the item. For instance, a T-Shirt may have properties representing information about the kind of material used, as well as the type of fit the shirt is.
 
