@@ -33,7 +33,7 @@ Some methods you may find useful:
 * `display_total`: Same as above, except for `total`.
 * `display_outstanding_balance`: Same as above, except for `outstanding_balance`.
 
-## <a id="state_machine"></a>The Order State Machine
+## The Order State Machine
 
 Orders flow through a state machine, beginning at a `cart` state and ending up at a `complete` state. The intermediary states can be configured using the <%= link_to "Checkout Flow API", :checkout %>.
 
@@ -57,7 +57,7 @@ The `complete` state can only be reached in one of two ways:
 
 Assuming that an order meets the criteria for the next state, you will be able to transition it to the next state by calling `next` on that object. If this returns `false`, then the order does *not* meet the criteria. To work out why it cannot transition, check the result of an `errors` method call.
 
-## <a id="line-items"></a>Line Items
+## Line Items
 
 Line items are used to keep track of items within the context of an order. These records provide a link between orders, and <%= link_to "Variants", 'products#variants' %>.
 
