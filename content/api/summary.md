@@ -32,6 +32,14 @@ curl http://example.com/api/products.json?token=YOUR_KEY_HERE```
 
 The token allows the request to assume the same level of permissions as the actual user to whom the token belongs.
 
+In some parts of the API -- such as the Checkouts and Orders APIs -- if you are not authenticated as a user, you can pass through an `order_token` parameter to gain access to the order object:
+
+```bash
+curl http://example.com/api/orders/R123456789?order_token=abcdef12345
+```
+
+This token is returned in *all* order responses.
+
 ### Error Messages
 
 You may encounter the follow error messages when using the API.
