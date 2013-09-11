@@ -24,6 +24,12 @@ extension is to create a file within the relevant **app/models/spree** or
 **Adding a custom method to the Product model:**
 app/models/spree/product_decorator.rb
 
+***
+It does not really matter where these decorators are defined within the `app`
+directory, just as long as they are somewhere in that directory and their
+filename ends with _decorator.rb`.
+***
+
 <% ruby do %>
     Spree::Product.class_eval do
       def some_method
