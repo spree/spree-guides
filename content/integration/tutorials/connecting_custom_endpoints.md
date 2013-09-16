@@ -12,7 +12,6 @@ Once you've created your endpoint you'll want to connect it to the hub so it can
 
 3. Registering your endpoint with the hub using the spree_hub_connector gem.
 
-
 ## endpoint.json
 
 When configuring an Integration using the Spree Hub Connector the information from the `endpoint.json` is used to populate a [mapping](/integration/mapping_basics.html) with default configuration for each configured service.

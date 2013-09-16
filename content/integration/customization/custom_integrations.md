@@ -14,7 +14,6 @@ Once you've created your endpoint the next step is to document the services avai
 
 The hub uses the details within this file to advertise the integration to the Spree Hub Connector, which allows you to configure and enable the services provided.
 
-
 ## Endpoint.json
 
 When configuring an Integration using the Spree Hub Connector the information from the `endpoint.json` is used to populate a [mapping](/integration/mapping_basics.html) with default configuration for each configured service.
@@ -43,13 +42,12 @@ In the example above we see the general details from the Mandrill `endpoint.json
 5. **help** - URL of documentation for an endpoint.
 6. **services** - Is an array of entries for each available service on the endpoint.
 
-
 ### Service Entries
 
 The majority of the details within an `endpoint.json` file are related to a service entry. The service entries outline all the details required for the hub to interact with your endpoints action:
 
 1. **name** - Following the same formatting rules an the overall endpoint name, each service requires a unique name (within the current endpoint).
-2. **path** - The relative path for the service, a message destined for a service with be POST'd to endpoints base url + the service path. i.e /order_confirmation
+2. **path** - The relative path for the service, a message destined for a service with be POST'd to endpoints base url + the service path. i.e http://ep-mandrill.spree.fm/order_confirmation
 3. **description** - A short text description of the service.
 4. **requires** - Identifies any required configuration for a given service (currently only supports listing parameters).
     1. **parameters** - Any parameters required for the given service to process a message. Each parameter has the following attributes:
@@ -65,7 +63,6 @@ The majority of the details within an `endpoint.json` file are related to a serv
         3. **value** - the value to use in the comparison (optional).
     4. **options** - any other recommended options.
         1. **retries_allowed** - a boolean indicating if a message may be automatically retried on failure (defaults to true).
-
 
 ---Example 'services' entry---
 ```json
@@ -117,5 +114,3 @@ The majority of the details within an `endpoint.json` file are related to a serv
         }
     }
 }```
-
-
