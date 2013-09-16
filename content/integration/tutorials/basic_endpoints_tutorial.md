@@ -158,7 +158,7 @@ Connection: Keep-Alive
 
 ### Simple Notification
 
-The `message_id` is the minimum information an endpoint has to return in a message it passes to the Hub. In the first example above, that's all that was returned. Now let's move to passing a simple Notification in the response. Notifications are human readable messages which can be processed by other endpoints.
+The `message_id` is the minimum information an endpoint has to return in a message it passes to the Integrator. In the first example above, that's all that was returned. Now let's move to passing a simple Notification in the response. Notifications are human readable messages which can be processed by other endpoints.
 
 ***
 For more information about Notifications, be sure to read the [Integration Terminology Guide](terminology) thoroughly.
@@ -255,17 +255,8 @@ $ curl --data @./in_stock_product.json -i -X POST -H 'Content-type:application/j
 
 Skipping the headers this time, you can see that the response we get is what we expect:
 
-```json
-{
-  "message_id":"518726r84910000015",
-  "notifications": [
-    { 
-      "level": "info",
-      "subject": "product exists",
-      "description": "product exists in the database"
-    }
-  ]
-}
+```bash
+{"message_id":"518726r84910000015","notifications":[{"level":"info","subject":"product exists","description":"product exists in the database"}]}
 ```
 
 Now, let's try a product our supplier does not carry. There is no need to restart `rack` here, since we haven't changed our endpoint.
