@@ -39,6 +39,7 @@ For more information please see the [Stock Messages](stock_messages) guide which
 For more information please see the [Stock Messages](stock_messages) guide which has information on each of the Message Types.
 
 * [Change](stock_messages#change)
+* [Actual](stock_messages#actual)
 
 # Notification Messages
 
