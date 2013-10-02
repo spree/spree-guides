@@ -4,7 +4,7 @@ title: RLM Endpoint
 
 ## Overview
 
-Endpoint for the [RLM](http://www2.ronlynn.com) ERP that saves order lines locally to be exported in bulk into a CSV formatted for RLM and uploaded to S3. Shipments are sent to the Persist method, and stored locally until Flush is called. The RLM ERP processes the orders line by line from a CSV file, this endpoint will break up the individual line items from the shipment and stores them in a format ready for RLM. 
+Endpoint for the [RLM](http://www2.ronlynn.com) ERP that saves order lines locally to be exported in bulk into a CSV formatted for RLM and uploaded to S3. Shipments are sent to the persist method, and stored locally until flush is called. The RLM ERP processes the orders line by line from a CSV file, this endpoint will break up the individual line items from the shipment and stores them in a format ready for RLM. 
 
 We also store the complete payload for reference, so any future adjustments can be made from this endpoint.
 
@@ -12,11 +12,11 @@ We also store the complete payload for reference, so any future adjustments can 
 The source code for the [RLM Endpoint](https://github.com/spree/rlm_endpoint/) is available on Github.
 +++
 
-## Requirements for the connecting Spree store
+## Requirements for the connecting storefront
 
-To properly connect your Spree store with this endpoint you need to add a few custom attributes.
+To properly connect your storefront with this endpoint you need to add a few custom attributes.
 
-you need to add `upc` and `rlm_sku` attributes to `Spree::Variant` class. Both attributes are Strings.
+you need to add `upc` and `rlm_sku` attributes to `Spree::Variant` class. Both attributes are strings.
 
 ***
 For details on how to customize your store read the [Custom Attributes Tutorial](/integration/custom_attributes_tutorial.html)
@@ -27,7 +27,7 @@ For details on how to customize your store read the [Custom Attributes Tutorial]
 
 ### Persist
 
-Stores the individual line items from a `shipment:ready` message. Each line is combined with all of the order header information, so that it can be stored in MongoDB until it is ready to be flushed. Lines are stored within the Endpoint so that they can be sent in batches. 
+Stores the individual line items from a `shipment:ready` message. Each line is combined with all of the order header information, so that it can be stored in MongoDB until it is ready to be flushed. Lines are stored within the endpoint so that they can be sent in batches. 
 
 
 #### Parameters
@@ -831,11 +831,11 @@ The content of the payload storage is truncated in the example response below.
 
 ### Flush
 
-Exports the stored lines in 2 different csv files. One for Amazon imported orders, and one for the regular Spree orders. Flush is called from the Hub periodically, using a scheduler. When Flush is called, it loads every shipment in the database that hasn't yet been sent into a CSV file. 
+Exports the stored lines in 2 different csv files. One for Amazon imported orders, and one for the regular Spree orders. Flush is called from the hub periodically, using a scheduler. When flush is called, it loads every shipment in the database that hasn't yet been sent into a CSV file. 
 
 #### File Structure
 
-Every line item on every shipment waiting to be flushed will be included in the file when the flush action is run. All of the Order Header information, such as number, address and totals are included on every line, so that RLM knows how to process it. A line is generated for each item on the shipment, containing identifying information (SKU, style, color, size), transactional information (price and discount), and quantity to ship. 
+Every line item on every shipment waiting to be flushed will be included in the file when the flush action is run. All of the order header information, such as number, address and totals are included on every line, so that RLM knows how to process it. A line is generated for each item on the shipment, containing identifying information (SKU, style, color, size), transactional information (price and discount), and quantity to ship. 
 
 #### File Names
 

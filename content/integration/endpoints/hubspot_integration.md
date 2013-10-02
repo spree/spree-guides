@@ -4,7 +4,7 @@ title: HubSpot Endpoint
 
 ## Overview
 
-[HubSpot](http://www.hubspot.com/) is an inbound marketing software platform that helps you track the success of your company's marketing strategy, using a variety of tools. Integration with HubSpot enables automatic creation and/or updating of existing contacts, based on orders that are created, updated, or canceled in your Spree store.
+[HubSpot](http://www.hubspot.com/) is an inbound marketing software platform that helps you track the success of your company's marketing strategy, using a variety of tools. Integration with HubSpot enables automatic creation and/or updating of existing contacts, based on orders that are created, updated, or canceled in your storefront.
 
 +++
 The source code for the [HubSpot Endpoint](https://github.com/spree/hubspot_endpoint/) is available on Github.
@@ -238,7 +238,7 @@ Processes incoming orders that are new, updated, or canceled and either creates 
 
 ### order:updated
 
-This type of Message should be sent when an existing order is updated.
+This type of message should be sent when an existing order is updated.
 
 ---order_updated.json---
 ```json
@@ -440,7 +440,7 @@ This type of Message should be sent when an existing order is updated.
 
 ### order:canceled
 
-You should send this type of Message whenever an order is canceled, whether by the customer or by a store administrator.
+You should send this type of message whenever an order is canceled, whether by the customer or by a store administrator.
 
 ---order_canceled.json---
 ```json

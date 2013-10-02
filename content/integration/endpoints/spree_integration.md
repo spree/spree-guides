@@ -4,7 +4,7 @@ title: Spree Endpoint
 
 ## Overview
 
-The Spree endpoint is the endpoint that handles all the interaction between the hub and Spree stores. It provides a variety of actions for monitoring different entities, which will be described below.
+The Spree endpoint is the endpoint that handles all the interaction between the hub and Spree Commerce storefronts. It provides a variety of actions for monitoring different entities, which will be described below.
 
 +++
 The source code for the [Spree Endpoint](https://github.com/spree/spree_endpoint/) is available on Github.
@@ -79,7 +79,7 @@ When sent a "spree:order:poll" message to /orders/poller, the endpoint fetches n
 
 ### Order Lock
 
-When sent an "order:ship" message to '/orders/lock', the endpoint Locks the order in a Spree store, preventing the admin from editing it.
+When sent an "order:ship" message to '/orders/lock', the endpoint locks the order in a Spree Commerce storefront, preventing the admin from editing it.
 
 ####Request
 
@@ -289,7 +289,7 @@ When sent an "order:ship" message to '/orders/lock', the endpoint Locks the orde
 
 ### Order Import
 
-When sent an "order:import" message to '/orders/import', the endpoint imports an order into the Spree store.
+When sent an "order:import" message to '/orders/import', the endpoint imports an order into the Spree Commerce storefront.
 
 ####Request
 
@@ -649,7 +649,7 @@ When sent an "shipment:confirm" message to /shipments/inventory_unit, the endpoi
 
 ### Stock Transfer Poller
 
-When sent an "spree:stock_transfer:poll" message, the endpoint polls the Spree store for changes in Stock Transfers.
+When sent an "spree:stock_transfer:poll" message, the endpoint polls the Spree Commerce storefront for changes in stock transfers.
 
 ####Request
 
@@ -804,11 +804,11 @@ When sent an "spree:stock_transfer:poll" message, the endpoint polls the Spree s
 
 ### Stock Change
 
-This message will change the ```count_on_hand``` for a ```Spree::Variant``` based on the provided sku and the quantity. The quantity can be negative!. The behaviour is a bit different between Spree versions. See tables below.
+This message will change the ```count_on_hand``` for a ```Spree::Variant``` based on the provided sku and the quantity. The quantity can be negative!. The behaviour is a bit different between Spree Commerce storefront versions. See tables below.
 
-Basically it's impossible to create any backorders for a Spree 1.3 store since the logic is tied to ```Orders``` and ```InventoryUnits```. An ```InvalidQuantityException``` will be raised when that's happening.
+Basically it's impossible to create any backorders for a Spree Commerce 1.3 storefront since the logic is tied to ```Orders``` and ```InventoryUnits```. An ```InvalidQuantityException``` will be raised when that's happening.
 
-#### Spree 1-3-stable store overview
+#### Spree Commerce 1-3-stable storefront overview
 
 | Original Count | Quantity | Count Result |
 | :--------------| :------- | :------------|
@@ -820,7 +820,7 @@ Basically it's impossible to create any backorders for a Spree 1.3 store since t
 | -6| -7 | Exception!
 
 
-#### Spree 2-0-stable store overview
+#### Spree Commerce 2-0-stable storefront overview
 
 | Original Count | Quantity | Count Result |
 | :--------------| :------- | :------------|
@@ -833,7 +833,7 @@ Basically it's impossible to create any backorders for a Spree 1.3 store since t
 
 #### Forcing the quantity.
 
-It's possible to force the quantity, when the ```spree.force_quantity``` is set to true (it's false by default!) the provided quantity will be the new ```count_on_hand```. For a Spree 1-3-stable store an ```InvalidQuantityException``` will be raised when the quantity is negative.
+It's possible to force the quantity, when the ```spree.force_quantity``` is set to true (it's false by default!) the provided quantity will be the new ```count_on_hand```. For a Spree Commerce 1-3-stable storefront an ```InvalidQuantityException``` will be raised when the quantity is negative.
 
 ####Request
 
@@ -854,7 +854,7 @@ It's possible to force the quantity, when the ```spree.force_quantity``` is set 
 | Name | Value | Example |
 | :----| :-----| :------ |
 | spree.force_quantity | forcing the count_on_hand to the supplied quantity | true |
-| spree.stock_location_id | The Stock Location id, only Spree >= 2.0 | 1 |
+| spree.stock_location_id | The stock location id, only Spree >= 2.0 | 1 |
 
 #### Response
 
@@ -899,7 +899,7 @@ This message will change the ```count_on_hand``` for a ```Spree::Variant``` base
 
 | Name | Value | Example |
 | :----| :-----| :------ |
-| spree.stock_location_id | The Stock Location id, only Spree >= 2.0 | 1 |
+| spree.stock_location_id | The stock location id, only Spree >= 2.0 | 1 |
 
 #### Response
 

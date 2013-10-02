@@ -384,7 +384,7 @@ Polls a SQS queue for incoming messages sent by Quiet Logistics.
 
 ### Download Document From S3
 
-Retrieves a document from a Quiet Logistics S3 bucket. The response message will vary depending on what type of document is downloaded. A ShipmentOrderResult will generate a ql:shipment:confirmation message whereas a PurchaseOrderReceipt will generate a purchase_order:received message.
+Retrieves a document from a Quiet Logistics S3 bucket. The response message will vary depending on what type of document is downloaded. A `ShipmentOrderResult` will generate a `ql:shipment:confirmation`message whereas a `PurchaseOrderReceipt` will generate a `purchase_order:received` message.
 
 #### Request (ShipmentOrderResult)
 

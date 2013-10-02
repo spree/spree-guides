@@ -12,7 +12,7 @@ The source code for the [Simparel](https://github.com/spree/simparel_endpoint/) 
 
 ## Requirements
 
-The Simparel Endpoint operates with the assumption that there is an existing API that interfaces with the Simparel Database with the following routes
+The Simparel endpoint operates with the assumption that there is an existing API that interfaces with the Simparel database with the following routes
 
 * /production_shipping_notices
 * /production_shipping_notices/:id
@@ -193,7 +193,7 @@ Poll the simparel api for pending shipment orders. A purchase order is comprised
 
 ### Confirm Purchase Order
 
-Mark a purchase order confirmed once the purchase order has been trasmitted
+Mark a purchase order confirmed once the purchase order has been transmitted.
 
 #### Request
 

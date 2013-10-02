@@ -46,10 +46,10 @@ Imports a notification message of type "notification:error" or "notification:war
 
 | Name | Value | Example |
 | :----| :-----| :------ |
-| zendesk.url | Your Zendesk Domain | https://mywidgets.zendesk.com/api/v2/ |
-| zendesk.username | Your Zendesk Username/Email | mywidgets@example.com |
-| zendesk.password | Your Zendesk Login Password | password |
-| zendesk.requester_name | Name to use for the ticket's Requester | Joe Jackson |
+| zendesk.url | Your Zendesk domain | https://mywidgets.zendesk.com/api/v2/ |
+| zendesk.username | Your Zendesk username/email | mywidgets@example.com |
+| zendesk.password | Your Zendesk login password | password |
+| zendesk.requester_name | Name to use for the ticket's requester | Joe Jackson |
 | zendesk.requester_email | Email to use for the ticket's Requester | joe_jackson@example.com |
 | zendesk.warning_priority | The Zendesk priority to assign to warning notificiations. Values are "urgent", "high", "normal", or "low". Default is "high" | high |
 | zendesk.error_priority | The Zendesk priority to assign to error notificiations. Values are "urgent", "high", "normal", or "low". Default is "urgent" | urgent |

@@ -108,7 +108,7 @@ Send a shipment to Fosdick .
 
 ### Poll For Shipment Result Files
 
-Check an S3 bucket to see if there are any shipment result files ready to be downloaded
+Check an S3 bucket to see if there are any shipment result files ready to be downloaded.
 
 ### Request
 

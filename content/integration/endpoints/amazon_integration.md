@@ -4,7 +4,7 @@ title: Amazon Endpoint
 
 ## Overview
 
-[Amazon](http://www.amazon.com/) is one of the Internet's largest retailers. This endpoint can be used to poll the Amazon API and import any new orders you may have there into your Spree store.
+[Amazon](http://www.amazon.com/) is one of the Internet's largest retailers. This endpoint can be used to poll the Amazon API and import any new orders you may have there into your storefront.
 
 +++
 The source code for the [Amazon Endpoint](https://github.com/spree/amazon_endpoint/) is available on Github.
@@ -19,7 +19,7 @@ In order to configure and use the [amazon_endpoint](https://github.com/spree/ama
 * Amazon seller ID
 * Amazon marketplace_id
 
-You'll also need to set a `amazon.last_updated_after` date to give the Endpoint a date range against which to compare.
+You'll also need to set a `amazon.last_updated_after` date to give the endpoint a date range against which to compare.
 
 ## Services
 

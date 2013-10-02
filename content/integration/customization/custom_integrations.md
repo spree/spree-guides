@@ -4,9 +4,9 @@ title: Custom Integrations
 
 ## Overview
 
-Customization is one of the key features of Spree Commerce, every merchant has their own unique requirements and being able to build out custom functionality in both your storefront and within the hub is critical.
+Customization is one of the key features of Spree Commerce, every merchant has their own unique requirements and being able to build out custom functionality in both your storefront and within our hub is critical.
 
-The hub allows you to use its powerful messaging and routing features to connect your own custom endpoints, allowing you to integrate in-house systems into your existing workflows.
+Our hub allows you to use its powerful messaging and routing features to connect your own custom endpoints, allowing you to integrate in-house systems into your existing workflows.
 
 We've created several [Tutorials](/integration/basic_endpoints_tutorial.html) that walk you through creating a number of different endpoints.
 
@@ -17,7 +17,7 @@ The hub uses the details within this file to advertise the integration to the Sp
 
 ## Endpoint.json
 
-When configuring an Integration using the Spree Hub Connector the information from the `endpoint.json` is used to populate a [mapping](/integration/mapping_basics.html) with default configuration for each configured service.
+When configuring an integration using the Spree Hub Connector the information from the `endpoint.json` is used to populate a [mapping](/integration/mapping_basics.html) with default configuration for each configured service.
 
 The file contains some basic details about your endpoint and lists all the available services including which messages you recommend the service process and all configuration details (like parameters, filters, identifiers that the service may require).
 

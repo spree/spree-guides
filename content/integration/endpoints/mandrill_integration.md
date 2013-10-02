@@ -4,7 +4,7 @@ title: Mandrill Endpoint
 
 ## Overview
 
-[Mandrill](http://mandrill.com/) is a transactional email platform that you can use to automatically process your store's emails through the Spree Integrator. Mandrill could be called on any time you needed to, for example:
+[Mandrill](http://mandrill.com/) is a transactional email platform that you can use to automatically process your store's emails through the Spree Commerce hub. Mandrill could be called on any time you needed to, for example:
 
 * confirm to a user that you have received their order,
 * notify a user that their order was canceled, or
@@ -26,11 +26,11 @@ To see thorough detail on how a particular JSON Message should be formatted, che
 
 ### Templates
 
-The Mandrill Integration sends a collection of Merge Variables which can be used in Mandrill templates to fill in relevant information. Example templates are included with each of the actions below, and full information about the variables being sent can be found in [the code](https://github.com/spree/mandrill_endpoint/blob/master/lib/mandrill_sender.rb).
+The Mandrill Integration sends a collection of merge variables which can be used in Mandrill templates to fill in relevant information. Example templates are included with each of the actions below, and full information about the variables being sent can be found in [the code](https://github.com/spree/mandrill_endpoint/blob/master/lib/mandrill_sender.rb).
 
 ### Order Confirmation
 
-This Service should be triggered when an order is completed, or when an existing order is updated. When the Endpoint receives a validly-formatted Message to the `/order_confirmation` URL, it passes the order's information on to Mandrill's API. Mandrill then sends an email to the user using its matching stored [template](#template), confirming that their order was received.
+This service should be triggered when an order is completed, or when an existing order is updated. When the Endpoint receives a validly-formatted Message to the `/order_confirmation` URL, it passes the order's information on to Mandrill's API. Mandrill then sends an email to the user using its matching stored [template](#template), confirming that their order was received.
 
 <pre class="headers"><code>A new order is created</code></pre>
 ```json
@@ -111,7 +111,7 @@ Thank you for your order!
 
 ### Order Cancellation
 
-If an admin cancels an existing order, the hub will pick up on it and send a JSON message with the relevant data to the `/order_cancellation` URL. The Endpoint will transmit a Message to Mandrill, which then sends an email to the user, confirming that the order was canceled.
+If an admin cancels an existing order, the hub will pick up on it and send a JSON message with the relevant data to the `/order_cancellation` URL. The endpoint will transmit a message to Mandrill, which then sends an email to the user, confirming that the order was canceled.
 
 ```json
 {
@@ -169,7 +169,7 @@ Thanks
 
 ### Shipment Confirmation
 
-After an order moves to the `shipped` order state, the store should send notice via the Hub to the Endpoint's `/shipment_confirmation` URL, with the relevant order and shipment data. The Endpoint will then instruct Mandrill to email the customer, notifying them that the order is en route.
+After an order moves to the `shipped` order state, the store should send notice via the hub to the endpoint's `/shipment_confirmation` URL, with the relevant order and shipment data. The endpoint will then instruct Mandrill to email the customer, notifying them that the order is en route.
 
 ```json
 {
