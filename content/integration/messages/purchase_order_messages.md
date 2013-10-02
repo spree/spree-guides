@@ -8,7 +8,7 @@ title: Order Messages
 
 ### purchase_order:new
 
-Use this type of Message whenever a new order is created.
+Use this type of message whenever a new order is created.
 
 ---purchase_order_new.json---
 ```json

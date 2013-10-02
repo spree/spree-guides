@@ -8,7 +8,7 @@ title: Order Messages
 
 ### order:new
 
-When a new order is created, this is the message that will be send out. The ```original``` is the Spree::Order, while the ```order``` is the generic Integrator order format.
+When a new order is created, this is the message that will be send out. The ```original``` is always in the storefront format, while the ```order``` is the generic Spree Commerce hub order format.
 
 ---order_new.json---
 ```json
@@ -178,25 +178,6 @@ When a new order is created, this is the message that will be send out. The ```o
           ]
         }
       ]
-<<<<<<< HEAD
-    },
-    "original": {
-      "id": 5,
-      "number": "R104702249",
-      "item_total": "99.95",
-      "total": "114.95",
-      "state": "complete",
-      "adjustment_total": "15.0",
-      "user_id": 1,
-      "created_at": "2013-07-29T17:42:02Z",
-      "updated_at": "2013-07-30T20:08:39Z",
-      "completed_at": "2013-07-30T19:19:05Z",
-      "payment_total": "114.95",
-      "shipment_state": "partial",
-      "payment_state": "paid",
-      "email": "spree@example.com",
-      "special_instructions": null,
-=======
     }
   }
 }
@@ -204,7 +185,7 @@ When a new order is created, this is the message that will be send out. The ```o
 
 ### order:update
 
-This type of Message should be sent when an existing order is updated.
+This type of message should be sent when an existing order is updated.
 
 ---order_updated.json---
 ```json
@@ -589,7 +570,7 @@ This type of Message should be sent when an existing order is updated.
 
 ### order:canceled
 
-When an order is updated, the following message will be send out. The ```order``` and ```previous``` are all in the generic Integrator format, while the ```original``` is the ```Spree::Order```. The ```diff`` key contains all the changes that happend for this order.
+When an order is updated, the following message will be send out. The ```order``` and ```previous``` are all in the generic Spree Commerce hub format, while the ```original``` is in the storefront format. The ```diff`` key contains all the changes that happend for this order.
 
 ---order_canceled.json---
 ```json

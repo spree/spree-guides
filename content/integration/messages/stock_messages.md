@@ -3,7 +3,7 @@ title: Stock Messages
 ---
 
 ## Overview
-Changing the stock amount for a specific Variant by his SKU.
+Changing the stock amount for a specific variant by his SKU.
 
 By default stock backordering will be respected. To turn this off add a boolean parameter ```spree.force_quantity``` with ```true``` to set the stock amount exactly the same as the quantity provided.
 
@@ -14,7 +14,7 @@ By default stock backordering will be respected. To turn this off add a boolean 
 This message will change the ```count_on_hand``` for a ```Spree::Variant``` based on the provided sku and the quantity. The quantity can be negative!. 
 
 !!!
-It's impossible to create any backorders for a Spree 1.3 store since the logic is tied to Orders and InventoryUnits. An ```InvalidQuantityException``` will be raised when that's happening.
+It's impossible to create any backorders for a Spree Commerce 1.3 storefront since the logic is tied to orders and inventory units. An ```InvalidQuantityException``` will be raised when that's happening.
 !!!
 
 ---stock_change.json---
@@ -34,7 +34,7 @@ It's impossible to create any backorders for a Spree 1.3 store since the logic i
 This message will set the ```count_on_hand``` for a ```Spree::Variant``` based on the provided sku and the quantity. The quantity can be negative!. This message will always force the quantity.
 
 !!!
-It's impossible to create any backorders for a Spree 1.3 store since the logic is tied to Orders and InventoryUnits. An ```InvalidQuantityException``` will be raised when that's happening.
+It's impossible to create any backorders for a Spree Commerce 1.3 storefront since the logic is tied to Orders and InventoryUnits. An ```InvalidQuantityException``` will be raised when that's happening.
 !!!
 
 ---stock_actual.json---

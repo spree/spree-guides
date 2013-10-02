@@ -4,17 +4,17 @@ title: Notification Messages
 
 ## Overview
 
-Notification Messages are generally used by Endpoints to convey information to the owner of the store (or one of their employees.) These Messages are typically generated in the context of an Endpoint Service Request and should always be sent with a HTTP Status Code of `200`.
+Notification messages are generally used by endpoints to convey information to the owner of the storefront (or one of their employees.) These messages are typically generated in the context of an endpoint service request and should always be sent with a HTTP status code of `200`.
 
 ***
-Notification Messages can be mapped to Endpoints just like any other Message. By default they are also automatically converted into Log Entries.
+Notification messages can be mapped to endpoints just like any other message. By default they are also automatically converted into log entries.
 ***
 
 ## Message Types
 
 ### Info
 
-This Message type is for communicating interesting information from Endpoint Services. It is common for this type of Message to be sent in response after an Endpoint processes an inbound Message.
+This message type is for communicating interesting information from endpoint services. It is common for this type of message to be sent in response after an endpoint processes an inbound message.
 
 ---notification:info---
 ```json
@@ -31,7 +31,7 @@ This Message type is for communicating interesting information from Endpoint Ser
 
 ### Warn
 
-Use this Message type to indicate that a Service executed successfully but that there may be a potential problem that's worth investigating.
+Use this message type to indicate that a service executed successfully but that there may be a potential problem that's worth investigating.
 
 ---notification:warn---
 ```json
@@ -48,7 +48,7 @@ Use this Message type to indicate that a Service executed successfully but that 
 
 ### Error
 
-Use this Message type to indicate that a Service was unable to perform the requested action. Typically this is a validation problem with the service or some other type of permanent failure. For example, a shipment is being requested to a country that is not eligible for shipping by the carrier. Use `notification:error` messages when no amount of retrying will change the outcome and its time to notify someone in charge of troubleshooting problems with the store.
+Use this message type to indicate that a service was unable to perform the requested action. Typically this is a validation problem with the service or some other type of permanent failure. For example, a shipment is being requested to a country that is not eligible for shipping by the carrier. Use `notification:error` messages when no amount of retrying will change the outcome and its time to notify someone in charge of troubleshooting problems with the store.
 
 !!!
 Do not use this message for exceptional situations such as the inability to connect to a third party server. Those types of exceptions are considered [Failures]() and should be handled by returning a `5XX` error code instead.

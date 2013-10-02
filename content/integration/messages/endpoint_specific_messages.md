@@ -10,7 +10,7 @@ title: Endpoint Specific Messages
 
 #### Poll Orders
 
-This message is used for you to poll the Amazon API, retrieve any new orders you have for your seller account, and import them into your Spree store.
+This message is used for you to poll the Amazon API, retrieve any new orders you have for your seller account, and import them into your Spree Commerce storefront.
 
 ```json
 {

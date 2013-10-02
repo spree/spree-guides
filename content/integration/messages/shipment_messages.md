@@ -58,7 +58,7 @@ title: Shipment Messages
 
 ### shipment:confirm
 
-This type of Message is sent whenever an order shipment is confirmed and sent. It includes the tracking information so the customer can use it to track his/her order.
+This type of message is sent whenever an order shipment is confirmed and sent. It includes the tracking information so the customer can use it to track his/her order.
 
 ---shipment_confirm.json---
 ```json
