@@ -255,8 +255,17 @@ $ curl --data @./in_stock_product.json -i -X POST -H 'Content-type:application/j
 
 Skipping the headers this time, you can see that the response we get is what we expect:
 
-```bash
-{"message_id":"518726r84910000015","notifications":[{"level":"info","subject":"product exists","description":"product exists in the database"}]}
+```json
+{
+  "message_id": "518726r84910000015",
+  "notifications": [
+    {
+      "level": "info",
+      "subject": "product exists",
+      "description": "product exists in the database"
+    }
+  ]
+}
 ```
 
 Now, let's try a product our supplier does not carry. There is no need to restart `rack` here, since we haven't changed our endpoint.
