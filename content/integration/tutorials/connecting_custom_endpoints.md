@@ -15,7 +15,7 @@ Once you've created your endpoint you'll want to connect it to the hub so it can
 
 ## endpoint.json
 
-When configuring an Integration using the Spree Hub Connector the information from the `endpoint.json` is used to populate a [mapping](/integration/mapping_basics.html) with default configuration for each configured service.
+When configuring an integration using the spree hub connector the information from the `endpoint.json` is used to populate a [mapping](/integration/mapping_basics.html) with default configuration for each configured service.
 
 The file contains some basic details about your endpoint and lists all the available services including which messages you recommend the service to process and all configuration details (like parameters, filters, identifiers that the service may require).
 
@@ -29,7 +29,7 @@ All endpoints must be publicly accessible in order for the hub to be able to rou
 
 To ensure your endpoint only processes messages from the hub you must configure a preshared key that the hub will include as a HTTP header with each message it delivers.
 
-If you've used the Endpoint Base library to create your endpoint then security checks are already built-in and you just need to configure the `ENDPOINT_KEY` environment variable with a 32 digit (or longer) secret token of your choosing.
+If you've used the endpoint base library to create your endpoint then security checks are already built-in and you just need to configure the `ENDPOINT_KEY` environment variable with a 32 digit (or longer) secret token of your choosing.
 
 ## Registering your endpoint.
 

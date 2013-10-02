@@ -14,11 +14,11 @@ The source code for the [Fulfillment Integration Tutorial](https://github.com/sp
 
 By now, you should be familiar with the basic concepts of [creating an endpoint](creating_endpoints_tutorial). In this tutorial, we'll walk through creating a fictional - yet more realistic - integration, complete with the [endpoint](terminology#endpoints), JSON request files, and even a dummy API we'll use to simulate our drop-shipper.
 
-## Steps to Build the Integration
+## Steps to build the integration
 
 We will begin our integration with the simplest possible successful endpoint, and gradually add complexity and functionality.
 
-### Create a Basic Endpoint
+### Create a basic endpoint
 
 As with the more basic [endpoint creation tutorial](creating_endpoints_tutorial), we'll use the [EndpointBase gem](https://github.com/spree/endpoint_base) to create our fulfillment endpoint.
 
@@ -99,7 +99,7 @@ The output (including headers, as we included the `-H` switch in our curl comman
 The sample files for the preceding example are available on [Github](https://github.com/spree/hello_endpoint/tree/master/fulfillment_tutorial/basic_endpoint).
 +++
 
-### Make the API Call
+### Make the API call
 
 This is great, as far as it goes, but it doesn't really show the power of the Spree Commerce hub. We want our endpoints to interact with third-party services, not just return status messages. We can approximate this by writing a fake fulfillment API, called `DummyShip`.
 
@@ -257,7 +257,7 @@ Connection: Keep-Alive
 
 As we expected, the zip code for this order is outside the API's acceptable range; this shipment can not be sent with the `DummyShip` fulfillment process.
 
-### Return Multiple Messages
+### Return multiple messages
 
 We have definitely taken some steps toward more useful functionality, but the real beauty of the Spree Commerce hub is in the way one incoming message can have a ripple effect of several actions and messages to a variety of endpoints and their third-party services.
 

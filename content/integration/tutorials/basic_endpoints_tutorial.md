@@ -7,7 +7,7 @@ title: Basic Endpoints
 This tutorial assumes that you have [installed bundler](http://bundler.io/#getting-started) and Sinatra, and that you have a working knowledge of [Ruby](http://www.ruby-lang.org/en/), [JSON](http://www.json.org/), [Sinatra](http://www.sinatrarb.com/), and [Rack](http://rack.rubyforge.org).
 
 ***
-For detailed information about Endpoints, check out the [endpoints](terminology#endpoints) section of the Terminology guide.
+For detailed information about endpoints, check out the [endpoints](terminology#endpoints) section of the terminology guide.
 ***
 
 +++
@@ -158,10 +158,10 @@ Connection: Keep-Alive
 
 ### Simple Notification
 
-The `message_id` is the minimum information an endpoint has to return in a message it passes to the Hub. In the first example above, that's all that was returned. Now let's move to passing a simple Notification in the response. Notifications are human readable messages which can be processed by other endpoints.
+The `message_id` is the minimum information an endpoint has to return in a message it passes to the hub. In the first example above, that's all that was returned. Now let's move to passing a simple notification in the response. Notifications are human readable messages which can be processed by other endpoints.
 
 ***
-For more information about Notifications, be sure to read the [Integration Terminology Guide](terminology) thoroughly.
+For more information about notifications, be sure to read the [Integration Terminology Guide](terminology) thoroughly.
 ***
 
 In the `get_id.json` message that we passed to our endpoint, we indicated with the `product:new` value that we've added a new product to our storefront. Let's assume that our `HelloEndpoint` endpoint interfaces with a supplier's catalog, and we want to know if the supplier stocks a similar item. We need to add to the logic in our endpoint:
