@@ -2,7 +2,7 @@
 title: Consuming Messages
 ---
 
-## Consuming Messages
+## Consuming messages
 
 Once an endpoint is registered to consume messages, it will receive a JSON encoded HTTP POST to the configured endpoint URL every time certain conditions are met.
 
@@ -15,7 +15,7 @@ Each message will contain at least the following fields:
 <pre class="headers"><code>Basic message fields</code></pre>
 <%= json :message %>
 
-The Hub is responsible for ensuring each event is received and processed successfully by each subscribed endpoint.
+The hub is responsible for ensuring each event is received and processed successfully by each subscribed endpoint.
 
 
 ## Responding to messages
@@ -26,11 +26,11 @@ An endpoint can choose to make two standard responses:
 
 ### Synchronous Response
 
-A synchronous response indicates that the message has been completed / processed within the normal HTTP request / response cycle. Most endpoints perform synchronously as the Hub is configured to wait for up to 180 seconds for a response from an endpoint which is generally sufficient for processing most messages.
+A synchronous response indicates that the message has been completed / processed within the normal HTTP request / response cycle. Most endpoints perform synchronously as the hub is configured to wait for up to 180 seconds for a response from an endpoint which is generally sufficient for processing most messages.
 
 The synchronous response must contain at minimum the `message_id` of the message that was processed, and may additionally contain any / all of the following optional fields:
 
-* _messages_ - An array of new messages that should be accepted onto the internal queue of the Hub as a result of the message being processed, for example the Mandrill endpoint consumes the _new:order_ message and generates an _order:confirmation:sent_ message as a result. For details on the specific fields required please review [Pushing Messages](push).
+* _messages_ - An array of new messages that should be accepted onto the internal queue of the hub as a result of the message being processed, for example the Mandrill endpoint consumes the _new:order_ message and generates an _order:confirmation:sent_ message as a result. For details on the specific fields required please review [Pushing Messages](push).
 * _events_ - An array of new events which should be logged as a result of the message being processed.
 * _parameters_ - Configuration variables to be persisted to the store which can be included in the payload of future messages.
 
@@ -39,7 +39,7 @@ The synchronous response must contain at minimum the `message_id` of the message
 
 A synchronous response may also include any additional attributes with the JSON response, which will be persisted for logging and diagnostic purposes.
 
-### Asynchronous Response
+### Asynchronous response
 
 An asynchronous (or delayed) response indicates that the message requires a longer period of time for processing (than the default 180 second endpoint response window) or may be dependent on a scheduled event to be considered fully processed.
 
@@ -56,7 +56,7 @@ If you pass a relative URL for update_url, the hub will inherit the base URL fro
 <pre class="headers"><code>Asynchronous Response</code></pre>
 <%= json :async_message_response %>
 
-On receipt of an asynchronous response, the Hub will wait the allotted delay period and begin polling the `update_url` for a completion response.
+On receipt of an asynchronous response, the hub will wait the allotted delay period and begin polling the `update_url` for a completion response.
 
 Each poll to the `update_url` will be a HTTP POST containing the original message:
 

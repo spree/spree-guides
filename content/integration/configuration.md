@@ -4,13 +4,13 @@ title: Configuration
 
 ## Overview
 
-The SpreeCommerce hub configuration tool is designed to make managing your Spree integrations quick and painless. It is what handles communication between your storefront and the SpreeCommerce hub itself.
+The Spree Commerce hub configuration tool is designed to make managing your storefront integrations quick and painless. It is what handles communication between your storefront and the Spree Commerce hub itself.
 
 Installing the tool is a simple matter of adding one line to your product's `Gemfile`, and running two commands. Once that is done, you can manage your own third-party service integrations on the fly.
 
 ## Prerequisites
 
-This guide assumes you already have [bundler](http://bundler.io/) installed and that you are familiar with basic Ruby and Rails concepts. It also assume that you already have a functioning Spree storefront.
+This guide assumes you already have [bundler](http://bundler.io/) installed and that you are familiar with basic Ruby and Rails concepts. It also assume that you already have a functioning Spree Commerce storefront.
 
 ## Installation
 
@@ -29,17 +29,17 @@ $ bundle install
 $ bundle exec rails generate spree_hub_connector:install
 ```
 
-The first command installs the `spree_hub_connector` gem in your application. The second uses the gem's install generator to add hub-specific styles, and ActiveRecord migrations to your Spree application.
+The first command installs the `spree_hub_connector` gem in your application. The second uses the gem's install generator to add hub-specific styles, and ActiveRecord migrations to your Spree Commerce storefront.
 
-## Verifying Install Was Successful
+## Verifying install was successful
 
-Now when you launch your store and visit your Admin Interface by navigating to the `/admin` url, you'll notice that there is a new "Integration" tab, between the "Products" and "Configuration" tabs.
+Now when you launch your store and visit your admin interface by navigating to the `/admin` url, you'll notice that there is a new "Integration" tab, between the "Products" and "Configuration" tabs.
 
 ![Integration Tab](/images/integration/integration_tab.jpg)
 
-It is here that you will establish connections to the SpreeCommerce hub, add and remove integrations, configure integrations, and enable and disable services.
+It is here that you will establish connections to the Spree Commerce hub, add and remove integrations, configure integrations, and enable and disable services.
 
-## Making a Connection
+## Making a connection
 
 Now that you have `spree_hub_connector` installed in your application, you need to connect it to the SpreeCommerce hub.
 
@@ -51,7 +51,7 @@ Click the "Integration" tab. The first thing you'll need to do is to select the 
 
 ![Choose Environment](/images/integration/choose_environment.jpg)
 
-Once you choose your environment, your hub URL will be displayed, and you will be asked to log in, either as a New User or a Registered User. If this is your first time logging in, select New User; otherwise, select Registered User.
+Once you choose your environment, your hub URL will be displayed, and you will be asked to log in, either as a new user or a registered user. If this is your first time logging in, select New User; otherwise, select Registered User.
 
 ![Integrator Login](/images/integration/integrator_login.jpg)
 
@@ -61,7 +61,7 @@ Values for "Email", "Store Name", and "Store API URL" will already be filled in,
 
 ## Configuration
 
-When you expand the "Add New Integration" drop-down menu, you'll see a list of all of the globally-available integrations. You should review the particular configuration details for any of the [supported integrations](supported_integrations) you want to use, but we'll use [Mandrill](mandrill_integration) as an example to understand how the Configuration tool is used generally.
+When you expand the "Add New Integration" drop-down menu, you'll see a list of all of the globally-available integrations. You should review the particular configuration details for any of the [supported integrations](supported_integrations) you want to use, but we'll use [Mandrill](mandrill_integration) as an example to understand how the configuration tool is used generally.
 
 ![Mandrill Configuration](/images/integration/mandrill_config.jpg)
 
@@ -84,6 +84,6 @@ Once you have properly enabled and configured any of the endpoint's services you
 By hovering over the buttons on this integration, you see that you have several options for actions you can take:
 
 * Edit Properties - Re-open the configuration window, enable/disable individual services, change parameters for a service.
-* Refresh - Re-query the SpreeCommerce hub manually to get any new information.
+* Refresh - Re-query the Spree Commerce hub manually to get any new information.
 * Remove - Remove all of the mappings for individual services to this endpoint. Does not actually delete the integration itself, but will cause the integration not to appear on your store's "Active Integrations" section.
 * Disable All - Clicking the "Enabled" button means the individual services for the integration will be disabled. The integration will still appear on your store's "Active Integrations" section.
