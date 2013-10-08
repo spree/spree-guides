@@ -1,20 +1,20 @@
 ---
-title: Fosdick Endpoint
+title: Shipwire Endpoint
 ---
 
 ## Overview
 
-[Fosdick](http://www.fosdickfulfillment.com/) is a company that specializes in direct-to-consumer fullfillment.
+[Shipwire](http://www.shipwire.com/) is an eCommerce warehousing and order fulfillment company. Its outsourced fulfillment service includes software for managing inventory across warehouses.
 
 +++
-The source code for the [Fosdick Endpoint](https://github.com/spree/fosdick_endpoint/) is available on Github.
+The source code for the [Shipwire Endpoint](https://github.com/spree/shipwire_endpoint/) is available on Github.
 +++
 
 ## Services
 
 ### Send Shipment
 
-Send a shipment to Fosdick .
+Send a shipment to Shipwire .
 
 #### Request
 
@@ -106,18 +106,18 @@ Send a shipment to Fosdick .
 }
 ```
 
-### Poll For Shipment Result Files
+### Tracking
 
-Check an S3 bucket to see if there are any shipment result files ready to be downloaded.
+Track shipment dispatches.
 
 #### Request
 
----fosdick_shipment_results_poll.json---
+---shipwire_shipment_results_poll.json---
 ```json
 
 {
   "message_id": "51af1dc5fe53543f1200f519",
-  "message": "fosdick:shipment_results:poll",
+  "message": "shipwire:shipment_results:poll",
   "payload": {}
 }
 ```
@@ -126,9 +126,8 @@ Check an S3 bucket to see if there are any shipment result files ready to be dow
 
 | Name | Value | Example |
 | :----| :-----| :------ |
-| fosdick.amazon_key | Your AWS key | Aqws3958dhdjwb39 |
-| fosdick.amazon_secret_key | Your AWS Secret Key | dj20492dhjkdjeh2838w7 |
-| fosdick.s3_bucket | Name Of The S3 Bucket | fosdick |
+| username | Your Shipwire account username | user@email.com |
+| password | Your Shipwire account password | dj20492dhjkdjeh2838w7 |
 
 #### Response
 

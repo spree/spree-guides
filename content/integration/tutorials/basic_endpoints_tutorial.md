@@ -164,7 +164,7 @@ The `message_id` is the minimum information an endpoint has to return in a messa
 For more information about notifications, be sure to read the [Integration Terminology Guide](terminology) thoroughly.
 ***
 
-In the `get_id.json` message that we passed to our endpoint, we indicated with the `product:new` value that we've added a new product to our storefront. Let's assume that our `HelloEndpoint` endpoint interfaces with a supplier's catalog, and we want to know if the supplier stocks a similar item. We need to add to the logic in our endpoint:
+In the `give_id.json` message that we passed to our endpoint, we indicated with the `product:new` value that we've added a new product to our storefront. Let's assume that our `HelloEndpoint` endpoint interfaces with a supplier's catalog, and we want to know if the supplier stocks a similar item. We need to add to the logic in our endpoint:
 
 ---hello_endpoint.rb---
 ```ruby
@@ -255,16 +255,36 @@ $ curl --data @./in_stock_product.json -i -X POST -H 'Content-type:application/j
 
 Skipping the headers this time, you can see that the response we get is what we expect:
 
-```bash
-{"message_id":"518726r84910000015","notifications":[{"level":"info","subject":"product exists","description":"product exists in the database"}]}
+```json
+{
+  "message_id":"518726r84910000015",
+  "notifications": [
+    { 
+      "level": "info",
+      "subject": "product exists",
+      "description": "product exists in the database"
+    }
+  ]
+}
 ```
 
 Now, let's try a product our supplier does not carry. There is no need to restart `rack` here, since we haven't changed our endpoint.
 
 ```bash
 $ curl --data @./not_in_stock_product.json -i -X POST -H 'Content-type:application/json' http://localhost:9292/product_existence_check
+```
 
-{"message_id":"518726r84910000004","notifications":[{"level":"warn","subject":"product does not exsit","description":"product does not exist in the database"}]}
+```json
+{
+  "message_id":"518726r84910000004",
+  "notifications": [
+    {
+      "level": "warn",
+      "subject": "product does not exsit",
+      "description": "product does not exist in the database"
+    }
+  ]
+}
 ```
 
 The good news is that our endpoint works! The bad news is that we'll have to source our "Widgets Without Awesomeness" somewhere else.
@@ -337,14 +357,39 @@ If the product exists in the catalog, our endpoint returns a message with a succ
 ```bash
 $ bundle exec rackup -p 9292
 $ curl --data @./in_stock_product.json -i -X POST -H 'Content-type:application/json' http://localhost:9292/query_price
+```
 
-{"message_id":"518726r84910000015","messages":[{"message":"product:in_stock","payload":{"product":{"name":"Somewhat Less Awesome Widgets","price":"8.00"}}}]}
+```json
+{
+  "message_id":"518726r84910000015",
+  "messages": [
+    {
+      "message":"product:in_stock",
+      "payload": { 
+        "product": {
+          "name": "Somewhat Less Awesome Widgets",
+          "price": "8.00"
+        }
+      }
+    }
+  ]
+}
 ```
 
 If the product doesn't exist in the catalog, our endpoint still returns a message with a success code and our referenced `message_id`, but the `message` key's value is now `product:not_in_stock`, and of course, there is no product in the payload.
 
 ```bash
 $ curl --data @./not_in_stock_product.json -i -X POST -H 'Content-type:application/json' http://localhost:9292/query_price
+```
 
-{"message_id":"518726r84910000004","messages":[{"message":"product:not_in_stock","payload":{}}]}
+```json
+{
+  "message_id":"518726r84910000004",
+  "messages": [
+    {
+      "message":"product:not_in_stock",
+      "payload":{}
+    }
+  ]
+}
 ```
