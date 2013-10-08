@@ -4,7 +4,7 @@ title: Message Basics
 
 ## Message Generation
 
-The Spree Commerce hub is responsible for processing and delivering [messages](terminology#messages) based on a pre-configured set of business logic specific to a particular store. The messages processed by the Hub are generated in one of three possible ways.
+The Spree Commerce hub is responsible for processing and delivering [messages](terminology#messages) based on a pre-configured set of business logic specific to a particular store. The messages processed by the hub are generated in one of three possible ways.
 
 ### Polling
 
@@ -17,12 +17,12 @@ For example, if the API poller comes back with an order that the hub is not alre
 Finally, in some instances, an update to an order can result in a more specific message being generated. For instance, if the order status was changed from `complete` to `canceled` an `order:cancel` message would be produced instead of the more general `order:update`.
 
 ***
-See the specific [Message](messages_overview) guides for more details on each of these and other message Types.
+See the specific [message](messages_overview) guides for more details on each of these and other message types.
 ***
 
 ### Response
 
-The second way for a message to enter the system is in response to a [service request](terminology#service_requests) to an [endpoint](terminology#endpoints). When an end point is processing a message, it will typically respond with a new message. That new message can in turn be processed by the Spree Commerce hub.
+The second way for a message to enter the system is in response to a [service request](terminology#service_requests) to an [endpoint](terminology#endpoints). When an endpoint is processing a message, it will typically respond with a new message. That new message can in turn be processed by the Spree Commerce hub.
 
 Let's look at a specific example where we are using an integration that takes new shipments and dispatches them to a third party logistics provider (3PL) for drop shipping. The `process_shipment` service of this endpoint will return a `notification:info` message in response to this service request.
 
@@ -46,7 +46,7 @@ end
 In the above example, we returned a single message in the response, but messages generated in this way are technically an array of messages and so it is possible to generate more than one message as part of a service request. For example, if you were designing a service that returned the list of shipments that have shipped since the last check, then you would likely need to return multiple `shipment:confirm` messages.
 
 ***
-See the [Creating Endpoints](creating_endpoints_tutorial) tutorial for some more detailed examples on how to generate messages in response to processing a service request.
+See the [creating endpoints](creating_endpoints_tutorial) tutorial for some more detailed examples on how to generate messages in response to processing a service request.
 ***
 
 ### Push
@@ -58,26 +58,26 @@ Need more docs on message push.
 $$$
 
 ***
-Endpoints should never push Messages, since they are intended to be a passive consumer of Messages. Instead, they should be polled via a Message sent from the Hub, so that they can return the necessary information.
+Endpoints should never push messages, since they are intended to be a passive consumer of messages. Instead, they should be polled via a message sent from the hub, so that they can return the necessary information.
 ***
 
 ## Service Requests
 
-Integration Endpoints expose various [services](terminology#services) to the Hub. The Hub is configured with a series of [mappings](terminology#mappings), which tell it how it route a specific Message to a particular Service offered by an Endpoint.
+Integration endpoints expose various [services](terminology#services) to the hub. The Spree Commerce hub is configured with a series of [mappings](terminology#mappings), which tell it how it route a specific message to a particular service offered by an endpoint.
 
 ***
-See the [Mapping Guide](mapping_basics) for more information on how Messages are mapped to Endpoints.
+See the [mapping guide](mapping_basics) for more information on how messages are mapped to endpoints.
 ***
 
-Passing a Message to a particular Endpoint Service is also referred to as making a [service request](terminology#service_request). Service Requests are always made use the `HTTP POST` method and the Messages they pass are required to be in a JSON format. Now let's take a look at some aspects of message delivery.
+Passing a message to a particular endpoint eervice is also referred to as making a [service request](terminology#service_request). Service requests are always made use the `HTTP POST` method and the messages they pass are required to be in a JSON format. Now let's take a look at some aspects of message delivery.
 
 ***
-Integrations can be written in any language (not just Ruby). All that is required is that your Endpoint be able to respond to `HTTP POST` requests, and that your Service methods be capable of reading a JSON-formatted form parameter.
+Integrations can be written in any language (not just Ruby). All that is required is that your endpoint be able to respond to `HTTP POST` requests, and that your service methods be capable of reading a JSON-formatted form parameter.
 ***
 
 ## Message Delivery
 
-Messages routed through the Hub are guaranteed to be delivered to their intended endpoints. When attempting to deliver a message to a service (i.e. making a service request), one of three things can happen.
+Messages routed through the hub are guaranteed to be delivered to their intended endpoints. When attempting to deliver a message to a service (i.e. making a service request), one of three things can happen.
 
 ### Successful Delivery
 
@@ -107,14 +107,14 @@ Connection: Keep-Alive
 ```
 
 ***
-See the [Creating Endpoints](creating_endpoints_tutorial) tutorial for more detailed examples of how to build simple endpoints.
+See the [creating endpoints](creating_endpoints_tutorial) tutorial for more detailed examples of how to build simple endpoints.
 ***
 
 There is, however, a more informative way to convey the successful delivery of a message. In addition to returning `200 OK` a service can return an array of messages (or just a single message). The previous discussion of [responses](#response) contains an example of how this can be done.
 
 Responding with a [notification message](notification_messages) has the advantage of allowing the service to pass additional human-readable information back to the hub. By default, notification messages will be turned into [log entries](terminology#log_entries), which can be displayed in a detailed tab in the store's admin interface.
 
-Sometimes, however, it's important to convey more than just "success" plus a log entry. A major advantage to using Spree Commerce hub is that it allows one integration to respond to events taking place in another. In order for this to happen, however, the Service Request of the first integration needs to return something more specific in addition to a log message.
+Sometimes, however, it's important to convey more than just "success" plus a log entry. A major advantage to using the Spree Commerce hub is that it allows one integration to respond to events taking place in another. In order for this to happen, however, the service request of the first integration needs to return something more specific in addition to a log message.
 
 Let's look at a specific example where we want a particular integration to capture a previously authorized credit card payment once a shipment is ready to ship. Suppose further that we want to send an email message to the customer once we capture the payment on their card. Once we've taken care of the necessary mappings, we could use an endpoint with a `capture_payment` method.
 
@@ -150,7 +150,7 @@ end
 In this case we've actually returned multiple messages. We return a `notification:info` message so that can be displayed on the events tab in the Spree Commerce storefront, but we also return a `payment:capture` message. The idea here is that another integration can then listen specifically for `payment:capture` messages and do something specific knowing that a payment has been captured (update Quickbooks, send an email to the customer, etc.)
 
 ***
-Note that services are not required to return a pre-defined message Type. You are free to create your own endpoints that return custom message types.
+Note that services are not required to return a pre-defined message type. You are free to create your own endpoints that return custom message types.
 ***
 
 ### Error on Delivery
@@ -195,7 +195,7 @@ There are times where processing a service request results in an exceptional con
 
 Endpoints can sometimes encounter an exception when trying to communicate with a third-party service through their API (ex. Shipwire is down for maintenance.) Typically these situations will result in exceptions. In these instances there is typically no need to rescue the exception, you can just allow it to result in a `5XX Error` response and the Spree Commerce hub will treat the request has failed.
 
-If the third party API is recuing exceptions or reporting permanent failure type situations as `200 OK` you may need to examine the respone more carefully and then raise your own exception (or just return `500 Internal Server Error` and supply your own error message.)
+If the third party API is rescuing exceptions or reporting permanent failure type situations as `200 OK` you may need to examine the respone more carefully and then raise your own exception (or just return `500 Internal Server Error` and supply your own error message.)
 
 #### How Failures are Handled
 
@@ -209,9 +209,9 @@ Failure conditions in a live production environment are also monitored by the Sp
 
 ## Message Parameters
 
-Integration endpoints are typically stateless, meaning that they don't retain information from one service request to the next. This allows the same endpoint to serve more than one store and to function in more than one environment at a time (ex. staging and production.) This poses a challenge, however, since each storefront may have its own API keys or other configuration inforamtion needed to talk to a third party service.
+Integration endpoints are typically stateless, meaning that they don't retain information from one service request to the next. This allows the same endpoint to serve more than one store and to function in more than one environment at a time (ex. staging and production.) This poses a challenge, however, since each storefront may have its own API keys or other configuration information needed to talk to a third party service.
 
-[Parameters](terminology#parameters) serve as a mechanism for transmitting this type of information to the endpoint. They are configured on a per store basis using the mapping tool (see the [Mapping Configuration](mapping_configuration)) guide for more details.
+[Parameters](terminology#parameters) serve as a mechanism for transmitting this type of information to the endpoint. They are configured on a per store basis using the mapping tool (see the [mapping configuration](mapping_configuration)) guide for more details.
 
 Once configured the hub will send the parameters for a particular mapping upon each request.
 
@@ -232,7 +232,7 @@ Once configured the hub will send the parameters for a particular mapping upon e
 }
 ```
 
-Message parameters can also contain lookup data. In addition to passing API type parameters there are usecases where parameters can provide lookup data needed to bridge two different systems. For instance, if you are importing orders into your Spree store you may need to translate the shipping method names Amazon uses into the ones used by your Spree store.  The following is an example of the type of message and parameters you could use to accomplish this.
+Message parameters can also contain lookup data. In addition to passing API type parameters there are usecases where parameters can provide lookup data needed to bridge two different systems. For instance, if you are importing orders into your Spree store you may need to translate the shipping method names Amazon uses into the ones used by your storefront. The following is an example of the type of message and parameters you could use to accomplish this.
 
 ---order_import.json---
 ```ruby

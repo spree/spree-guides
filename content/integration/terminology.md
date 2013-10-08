@@ -12,14 +12,14 @@ Each integration is generally provided by a single [endpoint](#endpoints) applic
 
 ## Messages
 
-Messages are the core of the Spree Commerce hub. A single action within a storefront can result in several discrete Messages being sent to multiple Endpoints. A Message can be created in one of two ways:
+Messages are the core of the Spree Commerce hub. A single action within a storefront can result in several discrete messages being sent to multiple endpoints. A message can be created in one of two ways:
 
 1. Indirectly as the result of events within a Spree Commerce storefront which the hub discovers when it polls the store. Examples of such events are new customers, orders, and shipments.
-2. In response to a Message that is being processed by an Endpoint.
+2. In response to a message that is being processed by an endpoint.
 
 ### Attributes
 
-Every Message contains (at least) the following details:
+Every message contains (at least) the following details:
 
 | Attribute       | Description               |
 | :---------------| :-------------------------|
@@ -36,17 +36,17 @@ The following is an example of the JSON representation of a typical message:
 
 ## Endpoints
 
-Endpoints are small standalone web applications that can be subscribed to certain Message types via Mappings. Our hub delivers and tracks each Message as a Service Request is sent to all of its subscribed Endpoints. The Hub includes lots of existing Endpoints for popular services and applications, but you can also create custom or private Endpoints to help integrate with proprietary systems.
+Endpoints are small standalone web applications that can be subscribed to certain message types via mappings. Our hub delivers and tracks each message as a service request is sent to all of its subscribed endpoints. The hub includes lots of existing endpoints for popular services and applications, but you can also create custom or private endpoints to help integrate with proprietary systems.
 
-Any Message within the Spree Commerce hub can be consumed by an Endpoint, with each individual Message resulting in a JSON-encoded Message being sent via an `HTTP POST` request to a pre-configured Endpoint URL.
+Any message within the Spree Commerce hub can be consumed by an endpoint, with each individual message resulting in a JSON-encoded message being sent via an `HTTP POST` request to a pre-configured endpoint URL.
 
-Using the hub's control panel, you can configure a list of the Message types you want to subscribe to, and a list of corresponding Endpoint URLs that will process them.
+Using the hub's control panel, you can configure a list of the message types you want to subscribe to, and a list of corresponding endpoint URLs that will process them.
 
 ## Services
 
-Endpoints expose one or more Services to the outside world. Each Service maps to an `HTTP POST` method which is implemented in the Endpoint.
+Endpoints expose one or more services to the outside world. Each service maps to an `HTTP POST` method which is implemented in the endpoint.
 
-Take the following example from the [Hubspot Integration](hubspot_integration), which exposes a Service for recording new customers in Hubspot.
+Take the following example from the [hubspot integration](hubspot_integration), which exposes a service for recording new customers in Hubspot.
 
 <pre class="headers"><code>hubspot_endpoint.rb</code></pre>
 ```ruby
@@ -72,12 +72,12 @@ end
 ```
 
 ***
-For more information on how Services communicate please see [Messaging Basics](messaging basics).
+For more information on how services communicate please see [messaging basics](messaging basics).
 ***
 
 ### Service Requests
 
-A Service Request refers to the act of sending an `HTTP POST` to an Endpoint. Service Requests are automatically issued to the appropriate Endpoints based on user-defined Mappings. Behind the scenes, a Service Request looks something like this example, taken from the [Creating Endpoints Tutorial](creating_endpoints_tutorial):
+A service request refers to the act of sending an `HTTP POST` to an endpoint. Service requests are automatically issued to the appropriate endpoints based on user-defined mappings. Behind the scenes, a service request looks something like this example, taken from the [creating endpoints tutorial](creating_endpoints_tutorial):
 
 ```bash
 POST /query_price HTTP/1.1
@@ -88,14 +88,14 @@ Content-Length: 169
 ```
 
 ***
-If you are building your own Endpoint you may want to try some of the [Testing Tools](testing_tools) which provide a convenient way to send Service Requests to your Endpoint.
+If you are building your own endpoint you may want to try some of the [testing tools](testing_tools) which provide a convenient way to send service requests to your endpoint.
 ***
 
 ### Service Responses
 
-A Service Response refers to the `HTTP Response` sent by an Endpoint in answer to a Service Request. Service Responses that execute successfully (without encountering an exception) will return a `200 OK` response. If the Endpoint encounters an exception while processing the Service Request, it should return a `5XX SERVER ERROR` response code.
+A service response refers to the `HTTP Response` sent by an endpoint in answer to a service request. Service responses that execute successfully (without encountering an exception) will return a `200 OK` response. If the endpoint encounters an exception while processing the service request, it should return a `5XX SERVER ERROR` response code.
 
-Here's an example of a successful Service Response taken from the [Creating Endpoints Tutorial](creating_endpoints_tutorial):
+Here's an example of a successful service response taken from the [creating endpoints tutorial](creating_endpoints_tutorial):
 
 ```bash
 HTTP/1.1 200 OK
@@ -109,9 +109,9 @@ Server: WEBrick/1.3.1 (Ruby/1.9.3/2011-10-30)
 
 ## Mappings
 
-Mappings represent a subscription for specific message types to an endpoint's service, for example `order:new` to the Mandrill Order Confirmation service. Mappings include all the details required to provide routing, filtering, uniqueness protection and failure handling.
+Mappings represent a subscription for specific message types to an endpoint's service, for example `order:new` to the Mandrill order confirmation service. Mappings include all the details required to provide routing, filtering, uniqueness protection and failure handling.
 
-For more please review the [Mappings Guide](/integration/mapping_basics.html)
+For more please review the [mappings guide](/integration/mapping_basics.html)
 
 ## Notifications
 
@@ -119,7 +119,7 @@ Notifications are human readable event logs that can be returned by endpoints as
 
 Notifications are also messages which can be mapped to other endpoints for processing (like logging tickets in Zendesk for failures or sending emails).
 
-For more please review the [Notification Messages guide](/integration/notification_messages.html)
+For more please review the [notification messages guide](/integration/notification_messages.html)
 
 ## Schedulers
 

@@ -17,7 +17,7 @@ Messages are the core of the Spree Commerce hub. A single action within a storef
 <pre class="headers"><code>Basic message structure</code></pre>
 <%= json :message %>
 
-For more details on messages please refer to the [Message Basics Guide](/integration/message_basics.html), to review specific message structures and examples please refer to the [Message Overview Guide](/integration/messages_overview.html).
+For more details on messages please refer to the [message basics guide](/integration/message_basics.html), to review specific message structures and examples please refer to the [message overview guide](/integration/messages_overview.html).
 
 ## Architecture
 
@@ -29,25 +29,25 @@ Each official endpoint application is hosted as part of the hub, but can also be
 
 ## Message Flow
 
-The hub uses a dual-queue configuration to handle the processing of messages, each received message can be fanned out to one ore more [Integrations](/integration/terminology.html#integrations) by way of [Mappings](/integration/terminology.html#mappings).
+The hub uses a dual-queue configuration to handle the processing of messages, each received message can be fanned out to one ore more [integrations](/integration/terminology.html#integrations) by way of [mappings](/integration/terminology.html#mappings).
 
-![Message Flow](/images/integration/message_flow.gif)
+![Message flow](/images/integration/message_flow.gif)
 
 ### Incoming Queue
 
-As messages arrive on the hub they are stored in the incoming queue for review, each message is compared against a storefront specific mapping registry that is responsible for routing specific message types to interested Integrations.
+As messages arrive on the hub they are stored in the incoming queue for review, each message is compared against a storefront specific mapping registry that is responsible for routing specific message types to interested integrations.
 
-A single message stored on the incoming queue might be mapped to multiple integrations, and a new duplicate message is pushed onto the Accepted queue for each of those integrations.
+A single message stored on the incoming queue might be mapped to multiple integrations, and a new duplicate message is pushed onto the accepted queue for each of those integrations.
 
 ### Accepted Queue
 
-Once a message has made it's way to the Accepted queue it's delivery to the integration's endpoint is guaranteed. The Spree Commerce support team actively monitors and troubleshoots problem messages on the accepted queue, and will contact you to help resolve any problems as they occur.
+Once a message has made it's way to the accepted queue it's delivery to the integration's endpoint is guaranteed. The Spree Commerce support team actively monitors and troubleshoots problem messages on the accepted queue, and will contact you to help resolve any problems as they occur.
 
 ## Message Delivery
 
 Messages are delivered to the integration's endpoint by way of a HTTP POST request what encodes the message contents as JSON. Each endpoint must respond to the request with the correct output to indicate the successful processing of the message.
 
-![Message Delivery](/images/integration/message_delivery.gif)
+![Message delivery](/images/integration/message_delivery.gif)
 
 ### Successful Responses
 Successful endpoint responses are represented by a JSON encoded HTTP 200 response, that includes the message_id of the message that was delivered to the endpoint.

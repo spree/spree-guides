@@ -4,19 +4,18 @@ title: Mappings
 
 ## Overview
 
-Mappings represent a subscription for specific message types to an endpoint's service, for example `order:new` to the Mandrill Order Confirmation service. Mappings include all the details required to provide routing, filtering, uniqueness protection and failure handling.
+Mappings represent a subscription for specific message types to an endpoint's service, for example `order:new` to the mandrill order confirmation service. Mappings include all the details required to provide routing, filtering, uniqueness protection and failure handling.
 
 ## Parameters
 
-Parameters are store specific configuration values that are included with each Service Request as part of the Message payload. A single message may contain any number of parameters (including zero).
+Parameters are store specific configuration values that are included with each service request as part of the message payload. A single message may contain any number of parameters (including zero).
 
 There are two main types of parameters:
 
 | Attribute            | Description               |
 | :--------------------| :-------------------------|
 | **Single Value**     | These represent single pieces of configuration data like API keys, email addresses, etc, using one of the following datatypes: string, integer, float and boolean.
-| **Lists Value**      | Lists are special parameters generally used to hold lookup tables for matching data for disparate systems, for example shipping methods between Amazon and Spree Commerce
-
+| **Lists Value**      | Lists are special parameters generally used to hold lookup tables for matching data for disparate systems, for example shipping methods between Amazon and a Spree Commerce Storefront
 
 ### Example List Parameter
 
@@ -69,7 +68,7 @@ Identifiers have two key aspects:
 
 ## Filters
 
-Filters are very similar to Identifiers and are used to highlight attributes within a message and check them against a predefined value before allowing the message to route to an endpoint's service.
+Filters are very similar to identifiers and are used to highlight attributes within a message and check them against a predefined value before allowing the message to route to an endpoint's service.
 
 Filters are made up of four key values:
 
