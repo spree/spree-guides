@@ -195,6 +195,23 @@ When a new order is created, this is the message that will be send out. The ```o
       "payment_state": "paid",
       "email": "spree@example.com",
       "special_instructions": null,
+    }
+  }
+}
+```
+
+### order:updated
+
+This type of Message should be sent when an existing order is updated.
+
+---order_updated.json---
+```json
+{
+  "message": "order:updated",
+  "payload": {
+    "order": {
+      "channel": "Amazon",
+      "email": "test1@test.com",
       "currency": "USD",
       "ship_total": "10.0",
       "tax_total": "5.0",
