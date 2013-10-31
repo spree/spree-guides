@@ -1,8 +1,8 @@
---
+---
 title: Getting started
 ---
 
-## Overview
+## Introduction
 
 The SpreeCommerce hub configuration tool is designed to make managing your Spree integrations quick and painless. It is what handles communication between your storefront and the SpreeCommerce hub itself.
 
