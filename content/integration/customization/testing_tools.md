@@ -129,7 +129,7 @@ All testing methods detailed before try to reproduce the requests made by the Sp
 
 But only the Spree Hub Connector Testing Tool makes real tests, when you send a message through it, the message will be inserted in the Spree Hub Incoming Queue via [Hub API](/integration/push.html), the Spree Hub will process the message, move it to the Accepted Queue then make a request to your Endpoint with all configured parameters.
 
-In order to use the Spree Hub Connector Testing Tool you have to install the `spree_hub_connector` gem and configure your integration as detailed in the [Configuration Guide](/integration/configuration.html).
+In order to use the Spree Hub Connector Testing Tool you have to install the `spree_hub_connector` gem and configure your integration as detailed in the [Getting Started Guide](/integration/getting_started.html).
 
 After its installation you will be able to access it through the Test tab.
 
