@@ -103,7 +103,7 @@ Finally, if the taxable address (either the shipping or billing, depending on th
 
 ### Tax Included
 
-Many jurisdictions have what is commonly referred to as a Value Added Tax (VAT.) In these cases the tax is typically applied to the price. This means that prices for items are "inclusive of tax" and no additional tax needs to be applied during checkout.
+Many jurisdictions have what is commonly referred to as a Value Added Tax (VAT) or a Goods and Services Tax (GST). In these cases the tax is typically applied to the price. This means that prices for items are "inclusive of tax" and no additional tax needs to be applied during checkout.
 
 In the case of tax inclusive pricing the store owner should enter all prices inclusive of tax. This makes it easy for Spree to display the tax inclusive price since it won't have to be constantly calculated on the fly.
 
@@ -117,19 +117,19 @@ If you are going to designate one or more tax rates as being included in the pri
 You must choose a default tax zone if you are going to mark at a tax rate as being included in your product prices.
 ***
 
-When tax is included in the price there is no order adjustment needed (unlike the sales tax case). Stores are, however, typically interested in showing the amount of tax the user paid. These totals are for informational purposes only and do not affect the order total.
+When tax is included in the price there is an adjustment applied to the item which is being taxed, which is either a line item or an order. This adjustment is flagged as an "included" adjustment, which means that it will not count towards the final price of the item. This adjustment will show up on the checkout summary sidebar.
 
 Let's start by looking at an example where there is a 5% included on all products and it's included in the price. We'll further assume that this tax should only apply to orders within the United Kingdom (UK).
 
-In the case where the order address is within the UK and we purchase a single clothing item for &pound;17.99 we see an order total of &pound;17.99. The tax rate adjustment applied is &pound;17.99 x 5%, which is &pound;0.8995, and that is rounded up to two decimal places, becoming &pound;0.90.
+In the case where the order address is within the UK and we purchase a single clothing item for &pound;17.99 we see an order total of &pound;17.99. The tax rate adjustment applied is &pound;17.99 x 5%, which is &pound;0.8995, and that is rounded up to two decimal places, becoming &pound;0.90. Therefore there will be an "included" adjustment applied to this order of &pound;0.90.
 
-Now let's increase the quantity on the item from 1 to 2. The order total changes to &pound;35.98 with a tax total of &pound;1.799, which is again rounded up to now being &pound;1.80.
+Now let's increase the quantity on the item from 1 to 2. The order total changes to &pound;35.98 with a tax total of &pound;1.799, which is again rounded up to now being &pound;1.80. The adjustment will be updated accordingly.
 
 Next we'll add a different clothing item costing &pound;19.99 to our order. Since both items are clothing and taxed at the same rate, they can be reduced to a single total, which means there's a single adjustment still applied to the order, calculated like this: (&pound;17.99 + &pound;19.99) x 0.05 = &pound;1.899, rounded up to two decimal places: &pound;1.90.
 
 Now let's assume an additional tax rate of 10% on a "Consumer Electronics" tax category. When we add a product with this tax category to our order with a price of &pound;16.99, there will be a second adjustment added to the order, with a calculated total of &pound;16.99 x 10%, which is &pound;1.699. Rounded up, it's &pound;1.70.
 
-Finally, if the order's address is changed to being outside this tax zone, then there will be two negative adjustments applied to remove these tax rates from the order.
+Finally, if the order's address is changed to being outside this tax zone, then there will be two negative adjustments applied to remove these tax rates from the order. For example, an item that costs &pound;17.99 which has 5% tax inclusive will have a &pound;0.90 "refund", as that tax amount is backed out automatically.
 
 ### Additional Examples
 
