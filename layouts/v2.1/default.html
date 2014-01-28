@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" > <!--<![endif]-->
+<head>
+  <title><%= @item[:title] %> | Spree Commerce</title>
+
+  <%= render "#{@item[:version]}/_head" %>
+
+</head>
+<body class="index">
+
+  <%= render "#{@item[:version]}/_edge_badge" %>
+
+  <header id="header">
+    <div id="top-header">
+      <div class="container">
+
+        <div class="row">
+
+          <%= render "#{@item[:version]}/_logo" %>
+
+          <%= render "#{@item[:version]}/_main_menu_home" %>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div id="subheader">
+      <div class="container">
+
+          <h1 class="huge-title">Spree Documentation</h1>
+
+          <ul class="sections">
+            <li class="section">
+              <a href="/<%= version %>/api">
+                <i class="index-header-api"></i>
+                <h1 class="section-title">API</h1>
+              </a>
+            </li>
+            <li class="section">
+              <a href="/<%= version %>/developer">
+                <i class="index-header-developer"></i>
+                <h1 class="section-title">Developer</h1>
+              </a>
+            </li>
+            <li class="section">
+<<<<<<< HEAD:layouts/default.html
+              <a href="http://spreecommerce.com/docs/hub/">
+=======
+              <a href="/<%= version %>/integration">
+>>>>>>> Namespace guides to v2.1 path:layouts/v2.1/default.html
+                <i class="index-header-integration"></i>
+                <h1 class="section-title">Hub</h1>
+              </a>
+            </li>
+            <li class="section">
+              <a href="/<%= version %>/user">
+                <i class="index-header-user"></i>
+                <h1 class="section-title">User</h1>
+              </a>
+            </li>
+            <li class="section">
+              <a href="/release_notes/">
+                <i class="index-header-release-notes"></i>
+                <h1 class="section-title">Release Notes</h1>
+              </a>
+            </li>
+          </ul>
+
+      </div>
+    </div>
+
+  </header>
+
+  <div class="container">
+    <section id="main-content">
+
+      <div class="twelve columns">
+        <div id="content">
+          <%= yield %>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <%= render "#{@item[:version]}/_footer" %>
+  </body>
+</html>

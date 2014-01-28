@@ -1,0 +1,558 @@
+<aside id="sidebar" class="four columns">
+  <nav id="sidebar-menu">
+    <ul>
+      <li class="js-topic">
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Summary', 'api/summary' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Overview", 'api/summary', 'overview' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Rules", 'api/summary', 'rules' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Customizing", 'api/summary', 'customizing-responses' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Products', 'api/products' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Index", 'api/products', 'index' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Search", 'api/products', 'search' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/products', 'show' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "New", 'api/products', 'new' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/products', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/products', 'update' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Delete", 'api/products', 'delete' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Product Properties', 'api/product_properties' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Index", 'api/product_properties', 'index' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Search", 'api/product_properties', 'search' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/product_properties', 'show' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/product_properties', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/product_properties', 'update' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Delete", 'api/product_properties', 'delete' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Variants', 'api/variants' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Index", 'api/variants', 'index' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Search", 'api/variants', 'search' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/variants', 'show' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "New", 'api/variants', 'new' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/variants', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/variants', 'update' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Delete", 'api/variants', 'delete' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Orders', 'api/orders' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Index", 'api/orders', 'index' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Search", 'api/orders', 'search' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/orders', 'show' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show (delivery)", 'api/orders', 'show-delivery' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/orders', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Address", 'api/orders', 'update-address' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Empty", 'api/orders', 'empty' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Line Items', 'api/line_items' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/line_items', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/line_items', 'update' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Delete", 'api/line_items', 'delete' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Checkouts', 'api/checkouts' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Introduction", 'api/checkouts', 'introduction' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/checkouts', 'creating-a-blank-order' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Line Items", 'api/checkouts', 'creating-an-order-with-line-items' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/checkouts', 'updating-an-order' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Address", 'api/checkouts', 'address' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Delivery", 'api/checkouts', 'delivery' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Payment", 'api/checkouts', 'payment' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Confirm", 'api/checkouts', 'confirm' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Complete", 'api/checkouts', 'complete' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Payments', 'api/payments' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Index", 'api/payments', 'index' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Search", 'api/payments', 'search' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "New", 'api/payments', 'new' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/payments', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/payments', 'show' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Authorize", 'api/payments', 'authorize' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Capture", 'api/payments', 'capture' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Purchase", 'api/payments', 'purchase' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Void", 'api/payments', 'void' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Credit", 'api/payments', 'credit' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Return Authorizations', 'api/return_authorizations' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Index", 'api/return_authorizations', 'index' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Search", 'api/return_authorizations', 'search' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/return_authorizations', 'show' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/return_authorizations', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/return_authorizations', 'update' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Delete", 'api/return_authorizations', 'delete' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Shipments', 'api/shipments' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/shipments', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/shipments', 'update' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Ready", 'api/shipments', 'ready' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Ship", 'api/shipments', 'ship' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Add Variant", 'api/shipments', 'add-variant' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Remove Variant", 'api/shipments', 'remove-variant' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Taxonomies', 'api/taxonomies' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Index", 'api/taxonomies', 'index' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Search", 'api/taxonomies', 'search' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/taxonomies', 'show' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/taxonomies', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/taxonomies', 'update' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Delete", 'api/taxonomies', 'delete' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Taxon Index", 'api/taxonomies', 'list-taxons' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Taxon Show", 'api/taxonomies', 'a-single-taxon' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Taxon Create", 'api/taxonomies', 'taxon-create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Taxon Update", 'api/taxonomies', 'taxon-update' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Taxon Delete", 'api/taxonomies', 'taxon-delete' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Addresses', 'api/addresses' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/addresses', 'show' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/addresses', 'update' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Countries', 'api/countries' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Index", 'api/countries', 'index' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Search", 'api/countries', 'search' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/countries', 'show' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Stock Locations', 'api/stock_locations' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Index", 'api/stock_locations', 'index' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Search", 'api/stock_locations', 'search' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/stock_locations', 'show' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/stock_locations', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/stock_locations', 'update' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Delete", 'api/stock_locations', 'delete' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Stock Items', 'api/stock_items' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Index", 'api/stock_items', 'index' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Search", 'api/stock_items', 'search' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/stock_items', 'show' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/stock_items', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/stock_items', 'update' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Delete", 'api/stock_items', 'delete' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Stock Movements', 'api/stock_movements' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Index", 'api/stock_movements', 'index' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Search", 'api/stock_movements', 'search' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/stock_movements', 'show' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/stock_movements', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/stock_movements', 'update' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Delete", 'api/stock_movements', 'delete' %>
+          </li>
+        </ul>
+      </li>
+      <li class='js-topic'>
+        <h3>
+          <a href="#" class="js-expand-btn collapsed"><i class="icon-right-open"></i></a>
+          <%= link_to 'Zones', 'api/zones' %>
+        </h3>
+        <ul class="js-guides">
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Index", 'api/zones', 'index' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Search", 'api/zones', 'search' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Show", 'api/zones', 'show' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Create", 'api/zones', 'create' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Update", 'api/zones', 'update' %>
+          </li>
+          <li>
+            <i class="icon-dot"></i>
+            <%= link_to "Delete", 'api/zones', 'delete' %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</aside>

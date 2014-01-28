@@ -25,6 +25,10 @@ module Spree
 
       DefaultTimeFormat ||= "%B %-d, %Y".freeze
 
+      def version
+        @item[:version] || @item[:latest_version]
+      end
+
       def post_date(item)
         strftime item[:created_at]
       end
@@ -76,12 +80,17 @@ module Spree
       end
 
       def link_to(text, link, anchor=nil)
+        # require 'pry'
+        # binding.pry if @item.identifier.include?("api")
         if link.is_a?(Symbol)
           url = LINKS[link]
           raise "No link found for #{link}" unless url
         else
           url = link
         end
+
+        version = @item[:version] || @item[:latest_version]
+        url = "/#{@item[:version]}/#{url}"
         if anchor
           "<a href='#{url}.html##{anchor}'>#{text}</a>"
         else

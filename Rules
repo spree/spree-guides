@@ -11,120 +11,16 @@
 #   because “*” matches zero or more characters.
 require 'coderay_bash'
 
-compile '/static/*' do
+# Latest version first!
+versions = ["v2.1"]
+
+compile "/CNAME/" do
 end
 
-compile '/misc/*' do
-  filter :erb
+compile "/static/favicon.ico" do
 end
 
-compile '/' do
-  filter :pretty_urls
-  filter :erb
-  filter :kramdown, :toc_levels => [2]
-  layout 'default'
-end
-
-compile '/CNAME/' do
-end
-
-compile '/assets/stylesheets/*/_*/' do
-  # don’t compile partials
-end
-
-route '/assets/stylesheets/*/_*/' do
-  # don't output partials, so return nil
-  nil
-end
-
-compile '/assets/stylesheets/*/' do
-  filter :sass, syntax: :scss
-end
-
-route '/assets/stylesheets/*/' do
-  item.identifier.chop + '.css' # so that the /assets/style/screen/ item is compiled to /assets/style/screen.css
-end
-
-compile '/assets/*' do
-end
-
-route '/assets/*' do
-  item.identifier.chop + '.' + item[:extension]
-end
-
-compile '/feed/' do
-  filter :pretty_urls
-  filter :erb
-  filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
-end
-
-compile '/developer/' do
-  filter :pretty_urls
-  filter :erb
-  filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
-  layout 'developer'
-end
-
-compile '/developer/*' do
-  filter :pretty_urls
-  filter :erb
-  filter :parse_info_boxes
-  # Converts ``` codeblocks into Kramdown-friendly ~~~
-  filter :fenced_code_blocks
-  filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
-  layout 'developer/default'
-end
-
-compile '/release_notes/*' do
-  filter :pretty_urls
-  filter :erb
-  filter :parse_info_boxes
-  # Converts ``` codeblocks into Kramdown-friendly ~~~
-  filter :fenced_code_blocks
-  filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
-  layout 'release_notes/default'
-end
-
-compile '/api/' do
-  filter :pretty_urls
-  filter :erb
-  # Converts ``` codeblocks into Kramdown-friendly ~~~
-  filter :fenced_code_blocks
-  filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
-  layout 'api'
-end
-
-compile '/api/*' do
-  filter :pretty_urls
-  filter :erb
-  filter :parse_info_boxes
-  # Converts ``` codeblocks into Kramdown-friendly ~~~
-  filter :fenced_code_blocks
-  filter :parse_info_boxes
-  filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
-  layout 'api/default'
-end
-
-compile '/user/' do
-  filter :pretty_urls
-  filter :erb
-  # Converts ``` codeblocks into Kramdown-friendly ~~~
-  filter :fenced_code_blocks
-  filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
-  layout 'user'
-end
-
-compile '/user/*' do
-  filter :pretty_urls
-  filter :erb
-  filter :parse_info_boxes
-  # Converts ``` codeblocks into Kramdown-friendly ~~~
-  filter :fenced_code_blocks
-  filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
-  layout 'user/default'
-end
-
-compile '/release_notes/' do
+compile "/release_notes/" do
   filter :pretty_urls
   filter :fenced_code_blocks
   filter :erb
@@ -134,14 +30,40 @@ compile '/release_notes/' do
   layout 'release_notes'
 end
 
-compile '/release_notes/*' do
+compile "/release_notes/*" do
+  filter :pretty_urls
+  filter :erb
+  filter :parse_info_boxes
+  # Converts ``` codeblocks into Kramdown-friendly ~~~
+  filter :fenced_code_blocks
+  filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
+  layout 'release_notes'
+end
+
+compile "/upgrades/*" do
+  filter :pretty_urls
+  filter :erb
+  filter :parse_info_boxes
+  # Converts ``` codeblocks into Kramdown-friendly ~~~
+  filter :fenced_code_blocks
+  filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
+end
+
+compile '/release_notes/' do
   filter :pretty_urls
   filter :fenced_code_blocks
   filter :erb
-  # Converts ``` codeblocks into Kramdown-friendly ~~~
-  filter :parse_info_boxes
-  filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
   layout 'release_notes/default'
+end
+
+compile "/upgrades/" do
+  filter :pretty_urls
+  filter :erb
+  filter :parse_info_boxes
+  # Converts ``` codeblocks into Kramdown-friendly ~~~
+  filter :fenced_code_blocks
+  filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
+  layout 'upgrades'
 end
 
 route '/static/*' do
@@ -230,22 +152,303 @@ end
 route '/release_notes/*/' do
   location = item.identifier.gsub('/release_notes/', '/release_notes/spree_')
   location.chop + ".html"
+=======
+  layout 'upgrades'
 end
 
-route '/api/*/' do
+route "/release_notes/*/" do
+  location = item.identifier.gsub('/release_notes/', '/release_notes/spree_')
+  location.chop + ".html"
+end
+
+route "/upgrades/" do
+  item.identifier.chop + "/index.html"
+>>>>>>> Namespace guides to v2.1 path
+end
+
+route "/upgrades/*" do
   item.identifier.chop + ".html"
 end
 
-route '/integration/*/' do
-  item.identifier.chop + ".html"
+compile "/static/common/**/*" do
+  item.identifier[7..-2]
 end
 
-route '/user/*/' do
-  item.identifier.chop + ".html"
+route "/static/common/**/*" do
+  item.identifier[7..-2]
 end
 
-route '*' do
-  item.identifier + 'index.html'
+versions.each do |version|
+  compile "/" do
+    filter :pretty_urls
+    filter :erb
+    filter :kramdown, :toc_levels => [2]
+    layout "#{version}/default"
+  end
+
+  # This is so we can reference it if we require it anywhere
+  preprocess do
+    @items.each do |item|
+      item.attributes[:version] = version
+      item.attributes[:latest_version] = versions.first
+    end
+  end
+
+  compile "/static/#{version}/**/*" do
+    item.identifier[7..-2]
+  end
+
+  route "/static/#{version}/**/*" do
+    item.identifier[7..-2]
+  end
+
+  compile "#{version}/misc/*" do
+    filter :erb
+  end
+
+  compile "#{version}/" do
+    filter :pretty_urls
+    filter :erb
+    filter :kramdown, :toc_levels => [2]
+    layout "#{version}/default"
+  end
+ 
+  compile "#{version}/assets/stylesheets/*/_*/" do
+    # don’t compile partials
+  end
+
+  route "#{version}/assets/stylesheets/*/_*/" do
+    # don't output partials, so return nil
+    nil
+  end
+
+  compile "#{version}/assets/stylesheets/*/" do
+    filter :sass, syntax: :scss
+    filter :erb
+  end
+
+  route "#{version}/assets/stylesheets/*/" do
+    item.identifier.chop + '.css' # so that the #{version}/assets/style/screen/ item is compiled to #{version}/assets/style/screen.css
+  end
+
+  compile "#{version}/assets/*" do
+  end
+
+  route "#{version}/assets/*" do
+    item.identifier.chop + '.' + item[:extension]
+  end
+
+  compile "#{version}/feed/" do
+    filter :pretty_urls
+    filter :erb
+    filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
+  end
+
+  compile "#{version}/developer/" do
+    filter :pretty_urls
+    filter :erb
+    filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
+    layout "#{version}/developer"
+  end
+
+  compile "#{version}/developer/*" do
+    filter :pretty_urls
+    filter :erb
+    filter :parse_info_boxes
+    # Converts ``` codeblocks into Kramdown-friendly ~~~
+    filter :fenced_code_blocks
+    filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
+    filter :prefix_images
+    layout "#{version}/developer/default"
+  end
+
+  compile "#{version}/api/" do
+    filter :pretty_urls
+    filter :erb
+    # Converts ``` codeblocks into Kramdown-friendly ~~~
+    filter :fenced_code_blocks
+    filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
+    layout "#{version}/api"
+  end
+
+  compile "#{version}/api/*" do
+    filter :pretty_urls
+    filter :erb
+    filter :parse_info_boxes
+    # Converts ``` codeblocks into Kramdown-friendly ~~~
+    filter :fenced_code_blocks
+    filter :parse_info_boxes
+    filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
+    filter :prefix_images
+    layout "#{version}/api/default"
+  end
+
+  compile "#{version}/user/" do
+    filter :pretty_urls
+    filter :erb
+    # Converts ``` codeblocks into Kramdown-friendly ~~~
+    filter :fenced_code_blocks
+    filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
+    layout "#{version}/user"
+  end
+
+  compile "#{version}/user/*" do
+    filter :pretty_urls
+    filter :erb
+    filter :parse_info_boxes
+    # Converts ``` codeblocks into Kramdown-friendly ~~~
+    filter :fenced_code_blocks
+    filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
+    filter :prefix_images
+    layout "#{version}/user/default"
+  end
+
+  compile "#{version}/integration/" do
+    filter :pretty_urls
+    filter :fenced_code_blocks
+    filter :erb
+    # Converts ``` codeblocks into Kramdown-friendly ~~~
+    filter :parse_info_boxes
+    filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
+    layout "#{version}/integration"
+  end
+
+  compile "#{version}/integration/*" do
+    filter :pretty_urls
+    filter :fenced_code_blocks
+    filter :erb
+    # Converts ``` codeblocks into Kramdown-friendly ~~~
+    filter :parse_info_boxes
+    filter :kramdown, :toc_levels => [2], :coderay_line_numbers => nil, :coderay_css => :class
+    filter :prefix_images
+    layout "#{version}/integration/default"
+  end
+
+  ###############################################################
+  # Put the misc stuff in root directory after processing
+  ###############################################################
+  route "#{version}/misc/*" do
+    location = item.identifier.gsub('/misc/', '/')
+    location.chop + ".txt"
+  end
+
+  ###############################################################
+  # Flatten the developer guide stuff into single directory
+  ###############################################################
+  route "#{version}/developer/deployment/*/" do
+    location = item.identifier.gsub('/deployment/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/developer/source/*/" do
+    location = item.identifier.gsub('/source/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/developer/core/*/" do
+    location = item.identifier.gsub('/core/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/developer/tutorials/*/" do
+    location = item.identifier.gsub('/tutorials/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/developer/advanced/*/" do
+    location = item.identifier.gsub('/advanced/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/developer/customization/*/" do
+    location = item.identifier.gsub('/customization/', '/')
+    location.chop + ".html"
+  end
+
+  ###############################################################
+  # Flatten the user guide stuff into single directory
+  ###############################################################
+  route "#{version}/user/config/*/" do
+    location = item.identifier.gsub('/config/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/user/orders/*/" do
+    location = item.identifier.gsub('/orders/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/user/products/*/" do
+    location = item.identifier.gsub('/products/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/user/payments/*/" do
+    location = item.identifier.gsub('/payments/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/user/shipments/*/" do
+    location = item.identifier.gsub('/shipments/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/user/inventory/*/" do
+    location = item.identifier.gsub('/inventory/', '/')
+    location.chop + ".html"
+  end
+
+  ###############################################################
+  # Flatten the integration guide stuff into single directory
+  ###############################################################
+  route "#{version}/integration/tutorials/*/" do
+    location = item.identifier.gsub('/tutorials/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/integration/messages/*/" do
+    location = item.identifier.gsub('/messages/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/integration/endpoints/*/" do
+    location = item.identifier.gsub('/endpoints/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/integration/customization/*/" do
+    location = item.identifier.gsub('/customization/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/integration/api/*/" do
+    location = item.identifier.gsub('/api/', '/')
+    location.chop + ".html"
+  end
+
+  route "#{version}/api/*/" do
+    item.identifier.chop + ".html"
+  end
+
+  route "#{version}/integration/*/" do
+    item.identifier.chop + ".html"
+  end
+
+  route "#{version}/user/*/" do
+    item.identifier.chop + ".html"
+  end
+
+  route "#{version}/*" do
+    item.identifier + 'index.html'
+  end
 end
 
 layout '*', :erb
+
+route "/*" do
+  if item.binary?
+    item.identifier.chop
+  else
+    item.identifier + 'index.html'
+  end
+end
