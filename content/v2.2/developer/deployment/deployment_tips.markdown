@@ -109,7 +109,7 @@ For more information on preferences in general you may wish to read the
 
 If you do not wish to use SSL in production or staging, or if you wish to enable SSL in development mode, you will have to change the `:allow_ssl_in_production` configuration setting. This can be done via the admin interface as shown below:
 
-![Changing SSL Setting](../images/developer/change_ssl_setting.png "Changing SSL Setting")
+![Changing SSL Setting](/images/developer/change_ssl_setting.png "Changing SSL Setting")
 
 If you need to change any of the above default settings, it is also
 recommended to fix the setting in an initializer . In
@@ -192,7 +192,7 @@ Both smtp and inteceptor configs listed above can be found on the mail section
 in the configuration tab. Note that the *Mail Method Setting* link will not
 be displayed if `override_actionmailer_config` is `false`.
 
-![Changing Mail Server Setting](../images/developer/mail_server_settings.png "Changing Mail Server Setting")
+![Changing Mail Server Setting](/images/developer/mail_server_settings.png "Changing Mail Server Setting")
 
 !!!
 It's generally considered a bad idea to send email on the same

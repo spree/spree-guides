@@ -5,7 +5,7 @@ section: deployment
 
 ## Overview
 
-Along with the [Manual Ubuntu Deployment Guide](/developer/manual-ubuntu.html), and the [Spree Deployment Service](/developer/deployment-service.html), Spree can also be set up using [Ansible](http://ansibleworks.com). From Ansible's website:
+Along with the <%= link_to "Manual Ubuntu Deployment Guide", "developer/manual-ubuntu" %>, and the <%= link_to "Spree Deployment Service", "developer/deployment-service" %>, Spree can also be set up using [Ansible](http://ansibleworks.com). From Ansible's website:
 
 > Ansible is a radically simple IT orchestration engine that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications— automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.
 

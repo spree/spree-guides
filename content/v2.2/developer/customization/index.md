@@ -58,7 +58,7 @@ customizations.
 
 ***
 For more implementation details on Extensions and Themes please
-refer to the [Extensions & Themes](extensions_tutorial.html) guide.
+refer to the <%= link_to "Extensions", "developer/extensions_tutorial" %> guide.
 ***
 
 ### Customization Options
@@ -68,18 +68,14 @@ then need to choose the correct option to achieve the desired changes.
 
 #### View Customizations
 
-Allows you to change and/or extend the look and feel of a Spree store
-(and its administration system). For details see the [View
-Customization](view_customization.html) guide.
+Allows you to change and/or extend the look and feel of a Spree store (and its administration system). For details see the <%= link_to "View Customization", "developer/customization/view" %> guide.
 
 #### Asset Customizations
 
 Allows changing the static assets provided by Spree, this includes
-stylesheets, JavaScript files and images. For details see the [Asset
-Customization](asset_customization.html) guide.
+stylesheets, JavaScript files and images. For details see the <%= link_to "Asset Customization", "developer/customization/asset" %> guide.
 
 #### Logic Customizations
 
 Enables the changing and/or extension of the logic of Spree to meet your
-specific business requirements. For details see the [Logic
-Customization](logic_customization.html) guide.
+specific business requirements. For details see the <%= link_to "Logic Customization", "developer/customization/view" %> guide.

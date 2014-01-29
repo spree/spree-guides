@@ -89,8 +89,7 @@ module Spree
           url = link
         end
 
-        version = @item[:version] || @item[:latest_version]
-        url = "/#{@item[:version]}/#{url}"
+        url = "/#{version}/#{url}"
         if anchor
           "<a href='#{url}.html##{anchor}'>#{text}</a>"
         else

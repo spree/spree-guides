@@ -178,13 +178,15 @@ route "/static/common/**/*" do
   item.identifier[7..-2]
 end
 
+compile "/" do
+  filter :pretty_urls
+  filter :erb
+  filter :kramdown, :toc_levels => [2]
+  layout "#{version}/default"
+end
+
 versions.each do |version|
-  compile "/" do
-    filter :pretty_urls
-    filter :erb
-    filter :kramdown, :toc_levels => [2]
-    layout "#{version}/default"
-  end
+  puts "STARTING PROCESSING FOR VERSION #{version}"
 
   # This is so we can reference it if we require it anywhere
   preprocess do

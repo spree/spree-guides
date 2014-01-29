@@ -20,9 +20,7 @@
 
         <div class="row">
 
-          <div class="five columns">
-            <a class="logo" href="http://spreecommerce.com"><img src='/images/logo.png' /></a>
-          </div>
+          <%= render "#{version}/_logo" %>
 
           <%= render "#{version}/_main_menu_home" %>
 
@@ -38,25 +36,25 @@
 
           <ul class="sections">
             <li class="section">
-              <a href="/api/">
+              <a href="/<%= version %>/api">
                 <i class="index-header-api"></i>
                 <h1 class="section-title">API</h1>
               </a>
             </li>
             <li class="section">
-              <a href="/developer/">
+              <a href="/<%= version %>/developer">
                 <i class="index-header-developer"></i>
                 <h1 class="section-title">Developer</h1>
               </a>
             </li>
             <li class="section">
-              <a href="/integration/">
+              <a href="/<%= version %>/integration">
                 <i class="index-header-integration"></i>
                 <h1 class="section-title">Integration</h1>
               </a>
             </li>
             <li class="section">
-              <a href="/user">
+              <a href="/<%= version %>/user">
                 <i class="index-header-user"></i>
                 <h1 class="section-title">User</h1>
               </a>

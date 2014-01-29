@@ -195,7 +195,7 @@ If you choose to deploy a "Sample Application" then you should be able
 to browser to your Application Servers IP address to view the store
 running.
 
-If you are deploying your own application, please refer to the [Deploying your application on Ubuntu](ubuntu) or the [Deploying your application on Heroku](heroku) Guides for more.
+If you are deploying your own application, please refer to the <%= link_to "Deploying your application on Ubuntu", "developer/ubuntu" %> or the <%= link_to "Deploying your application on Heroku", "developer/heroku" %> Guides for more.
 
 ## Application Process
 
