@@ -185,17 +185,18 @@ compile "/" do
   layout "#{version}/default"
 end
 
-versions.each do |version|
-  puts "STARTING PROCESSING FOR VERSION #{version}"
-
-  # This is so we can reference it if we require it anywhere
-  preprocess do
-    @items.each do |item|
-      item.attributes[:version] = version
-      item.attributes[:latest_version] = versions.first
+# This is so we can reference it if we require it anywhere
+preprocess do
+  require 'pry'
+  @items.each do |item|
+    if item_version = item.identifier[/(v\d.\d)/]
+      item[:version] = item_version 
     end
+    item[:latest_version] = versions.first
   end
+end
 
+versions.each do |version|
   compile "/static/#{version}/**/*" do
     item.identifier[7..-2]
   end
