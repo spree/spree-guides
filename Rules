@@ -187,7 +187,6 @@ end
 
 # This is so we can reference it if we require it anywhere
 preprocess do
-  require 'pry'
   @items.each do |item|
     if item_version = item.identifier[/(v\d.\d)/]
       item[:version] = item_version 
