@@ -42,6 +42,6 @@ Clicking the box next to an Option Type title will automatically check all of it
 
 ![Prototype Option Types](/images/user/products/prototype_product_with_options.jpg)
 
-Proceed with [creating the product](creating-product) as you would normally, adding any missing fields not supplied by the prototype.
+Proceed with <%= link_to "creating the product", "user/creating_products" %> as you would normally, adding any missing fields not supplied by the prototype.
 
 Be sure to update each of the Variants with corresponding images, SKUs, and - if applicable - correct pricing.

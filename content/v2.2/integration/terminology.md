@@ -77,7 +77,7 @@ For more information on how Services communicate please see [Messaging Basics](m
 
 ### Service Requests
 
-A Service Request refers to the act of sending an `HTTP POST` to an Endpoint. Service Requests are automatically issued to the appropriate Endpoints based on user-defined Mappings. Behind the scenes, a Service Request looks something like this example, taken from the [Creating Endpoints Tutorial](creating_endpoints_tutorial):
+A Service Request refers to the act of sending an `HTTP POST` to an Endpoint. Service Requests are automatically issued to the appropriate Endpoints based on user-defined Mappings. Behind the scenes, a Service Request looks something like this example, taken from the <%= link_to "Creating Endpoints Tutorial", "integration/basic_endpoints_tutorial" %>:
 
 ```bash
 POST /query_price HTTP/1.1
@@ -95,7 +95,7 @@ If you are building your own Endpoint you may want to try some of the [Testing T
 
 A Service Response refers to the `HTTP Response` sent by an Endpoint in answer to a Service Request. Service Responses that execute successfully (without encountering an exception) will return a `200 OK` response. If the Endpoint encounters an exception while processing the Service Request, it should return a `5XX SERVER ERROR` response code.
 
-Here's an example of a successful Service Response taken from the [Creating Endpoints Tutorial](creating_endpoints_tutorial):
+Here's an example of a successful Service Response taken from the <%= link_to "Creating Endpoints Tutorial", "integration/basic_endpoints_tutorial" %>:
 
 ```bash
 HTTP/1.1 200 OK

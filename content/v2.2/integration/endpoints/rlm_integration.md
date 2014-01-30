@@ -19,7 +19,7 @@ To properly connect your Spree store with this endpoint you need to add a few cu
 you need to add `upc` and `rlm_sku` attributes to `Spree::Variant` class. Both attributes are Strings.
 
 ***
-For details on how to customize your store read the [Custom Attributes Tutorial](/integration/custom_attributes_tutorial.html)
+For details on how to customize your store read the <%= link_to "Custom Attributes Tutorial", "integration/custom_attributes_tutorial" %>
 ***
 
 

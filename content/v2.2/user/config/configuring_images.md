@@ -22,7 +22,7 @@ There are several image attachment-related settings that you can configure:
 There are four different default image styles that you can use for your store. Any time you upload an image for a product, the Spree site will automatically create all four versions of the image and store them for you to retrieve later.
 
 ***
-Changing the size settings for images will not cause the images you have uploaded _previously_ to be updated to the new size. For that, you will need to either delete and re-upload your existing images, or run a command to have them all re-processed. This has to be done at a command line. If you're interested in this functionality, have your development team review the [developer documents on products](/developer/products#images).
+Changing the size settings for images will not cause the images you have uploaded _previously_ to be updated to the new size. For that, you will need to either delete and re-upload your existing images, or run a command to have them all re-processed. This has to be done at a command line. If you're interested in this functionality, have your development team review the <%= link_to "developer documents on products", "developer/products", "images" %>.
 ***
 
 The four styles, and their default settings, are as follows:

@@ -39,7 +39,7 @@ The following response is an abbreviated example:
 ## Pushing a Message to the Hub
 
 ***
-For more information on the structure of messages and to view some sample messages, please view the [Sample Messages guide](/integration/sample_messages).
+For more information on the structure of messages and to view some sample messages, please view the <%= link_to "Sample Messages guide", "integration/sample_messages" %>.
 ***
 
 Let's go over pushing a couple different messages to the Spree Commerce hub. First, we'll push a more basic message, `stock:change`, and then we'll push a more complicated messages, `order:persist`.
@@ -65,7 +65,7 @@ with the following JSON request body:
 
 Here is an example request using cURL:
 
-```curl
+```text
 curl -XPOST -H"Content-Type: application/json" 
      -H"X-Augury-Token:YOUR_AUGURY_TOKEN" 
      -d '{"message":"stock:change","payload":{"sku":"APC-00001","quantity":10}' 
@@ -100,12 +100,12 @@ with the following JSON request body:
   %>
 
 ***
-To view the details of what should be in an `order:persist` payload, use the samples API described in the [sample messages](/integration/sample_messages) guide to generate a sample message.
+To view the details of what should be in an `order:persist` payload, use the samples API described in the <%= link_to "sample messages", "integration/sample_messages" %> guide to generate a sample message.
 ***
 
 Here is an example request using cURL:
 
-```curl
+```text
 curl -XPOST -H"Content-Type: application/json" 
      -H"X-Augury-Token:YOUR_AUGURY_TOKEN" 
      -d '{"message":"order:persist","payload":{}' 

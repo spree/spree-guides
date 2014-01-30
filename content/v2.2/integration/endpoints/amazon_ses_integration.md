@@ -4,7 +4,7 @@ title: Amazon Simple Email Service (SES) Endpoint
 
 ## Overview
 
-[Amazon Simple Email Service](aws.amazon.com/ses/‎) is part of Amazon.com's cloud computing platform, Amazon Web Services. SES provides AWS users with infrastructure for sending outbound bulk email correspondence.
+[Amazon Simple Email Service](http://aws.amazon.com/ses/‎) is part of Amazon.com's cloud computing platform, Amazon Web Services. SES provides AWS users with infrastructure for sending outbound bulk email correspondence.
 
 +++
 The source code for the [Amazon SES Endpoint](https://github.com/spree/amazon_ses_endpoint/) is available on Github.

@@ -108,13 +108,13 @@ Once you've created your endpoint you'll want to connect it to the hub so it can
 
 #### endpoint.json
 
-When configuring an Integration using the Spree Hub Connector the information from the `endpoint.json` is used to populate a [mapping](/integration/mapping_basics.html) with default configuration for each configured service.
+When configuring an Integration using the Spree Hub Connector the information from the `endpoint.json` is used to populate a <%= link_to "mapping", "integration/mapping_basics" %> with default configuration for each configured service.
 
 The file contains some basic details about your endpoint and lists all the available services including which messages you recommend the service to process and all configuration details (like parameters, filters, identifiers that the service may require).
 
 The `endpoint.json` file must be available at the root path of your application via `HTTP GET` request i.e. /endpoint.json
 
-For more details on the contents of the file please refer to the [Custom Integrations](/integration/custom_integrations.html) guide.
+For more details on the contents of the file please refer to the <%= link_to "Custom Integrations guide", "integration/custom_integrations" %>.
 
 #### Deployment and Security
 

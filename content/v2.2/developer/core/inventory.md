@@ -35,7 +35,7 @@ Note: Stock items are created automatically for each stock location you have. Yo
 
 ### Stock Movements
 
-![image](../images/developer/core/stock_movements.png)
+![image](/images/developer/core/stock_movements.png)
 
 Stock movements allow you to mange the inventory of a stock item for a stock location. Stock movements are created in the admin interface by first navigating to the product you want to manage. Then, follow the "Stock Management" link in the sidebar.
 
@@ -43,11 +43,11 @@ As shown in the image above, you can increase or decrease the count on hand avai
 
 ### Stock Transfers
 
-![image](../images/developer/core/stock_transfers.png)
+![image](/images/developer/core/stock_transfers.png)
 
 Stock transfers allow you to move inventory in bulk from one stock location to another stock location. Transfers are created in the admin interface by first navigating to the Configuration page. Then, follow the "Stock Transfers" link.
 
-![image](../images/developer/core/new_stock_transfer.png)
+![image](/images/developer/core/new_stock_transfer.png)
 
 As shown in the image above, you can move stock from one location to a different location. This is done by selecting a source location, a destination location, and one or more variants. You are also able to set the quantity for each variant individually.
 

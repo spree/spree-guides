@@ -8,7 +8,7 @@ The Spree Commerce hub is responsible for processing and delivering [messages](t
 
 ### Polling
 
-The most common way for messages to enter the system is via a scheduled poller that talks to the Spree Commerce [storefront API](/api). These pollers will ask the storefront for new messages that have been created or updated since the last time it checked.
+The most common way for messages to enter the system is via a scheduled poller that talks to the Spree Commerce <%= link_to "storefront API", "api/index" %>. These pollers will ask the storefront for new messages that have been created or updated since the last time it checked.
 
 It's not important to understand exactly how these API differences result in a message. For the purposes of this guide, it is sufficient for you to understand that changes to orders, payments, shipments, etc. come in via a scheduled polling action at regular intervals. The result of this will be a series of appropriate messages relevant to the state change.
 
@@ -46,7 +46,7 @@ end
 In the above example, we returned a single message in the response, but messages generated in this way are technically an array of messages and so it is possible to generate more than one message as part of a service request. For example, if you were designing a service that returned the list of shipments that have shipped since the last check, then you would likely need to return multiple `shipment:confirm` messages.
 
 ***
-See the [Creating Endpoints](creating_endpoints_tutorial) tutorial for some more detailed examples on how to generate messages in response to processing a service request.
+See the <%= link_to "Creating Endpoints", "integration/basic_endpoints_tutorial" %> tutorial for some more detailed examples on how to generate messages in response to processing a service request.
 ***
 
 ### Push
@@ -107,7 +107,7 @@ Connection: Keep-Alive
 ```
 
 ***
-See the [Creating Endpoints](creating_endpoints_tutorial) tutorial for more detailed examples of how to build simple endpoints.
+See the <%= link_to "Creating Endpoints", "integration/basic_endpoints_tutorial" %> tutorial for more detailed examples of how to build simple endpoints.
 ***
 
 There is, however, a more informative way to convey the successful delivery of a message. In addition to returning `200 OK` a service can return an array of messages (or just a single message). The previous discussion of [responses](#response) contains an example of how this can be done.
@@ -211,7 +211,7 @@ Failure conditions in a live production environment are also monitored by the Sp
 
 Integration endpoints are typically stateless, meaning that they don't retain information from one service request to the next. This allows the same endpoint to serve more than one store and to function in more than one environment at a time (ex. staging and production.) This poses a challenge, however, since each storefront may have its own API keys or other configuration inforamtion needed to talk to a third party service.
 
-[Parameters](terminology#parameters) serve as a mechanism for transmitting this type of information to the endpoint. They are configured on a per store basis using the mapping tool (see the [Mapping Configuration](mapping_configuration)) guide for more details.
+<%= link_to "Parameters", "integration/terminology", "parameters" %> serve as a mechanism for transmitting this type of information to the endpoint. They are configured on a per store basis using the mapping tool (see the <%= link_to "Mapping Configuration", "integration/mapping_basics" %>) guide for more details.
 
 Once configured the hub will send the parameters for a particular mapping upon each request.
 

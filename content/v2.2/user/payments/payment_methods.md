@@ -48,7 +48,7 @@ Choose the environment where you would like to enable the payment method. The ch
 
 * **Development** - Used by developers when they are testing a Spree store on their local machine.
 * **Production** - Select if you want the payment gateway to appear on the customer-facing area of your store.
-* **Test** - Used by developers who are testing their Spree store, typically with our [test suite](/developer/testing.html).
+* **Test** - Used by developers who are testing their Spree store, typically with our <%= link_to "test suite", "developer/testing" %>.
 
 #### Display
 

@@ -4,7 +4,7 @@ title: Zones, Countries, and States
 
 ## Introduction
 
-Your Spree store allows you to make decisions about which parts of the world you will sell products to, and how those areas are grouped into geographical regions for the convenience of setting [shipping](shipments) and [taxation](taxation) policies. This is accomplished through the use of:
+Your Spree store allows you to make decisions about which parts of the world you will sell products to, and how those areas are grouped into geographical regions for the convenience of setting <%= link_to "shipping", "user/shipments" %> and <%= link_to "taxation", "user/taxation" %> policies. This is accomplished through the use of:
 
 * [zones](#zones)
 * [countries](#countries), and

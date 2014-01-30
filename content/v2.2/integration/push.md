@@ -11,7 +11,7 @@ External systems can push messages on to the Hubs processing queue by using the 
 | message | This key represents the message type, in colon notation. For example: `order:new`, `order:updated`, `user:new`, `shipment:ready`.
 | payload | The payload contains all message-specific details. For example, in the case of `order:new` it would contains order details.
 
-Each message type may require specific details within the `payload` field, please review the [Messages Overview](/integration/messages_overview.html) for the specific message type requirements.
+Each message type may require specific details within the `payload` field, please review the <%= link_to "mappings", "integration/messages_overview" %> for the specific message type requirements.
 
 The API response will include all the details submitted, along with a `message_id` for the newly-created message.
 

@@ -12,7 +12,7 @@ The source code for the [Fulfillment Integration Tutorial](https://github.com/sp
 
 ## Introduction
 
-By now, you should be familiar with the basic concepts of [creating an endpoint](creating_endpoints_tutorial). In this tutorial, we'll walk through creating a fictional - yet more realistic - integration, complete with the [endpoint](terminology#endpoints), JSON request files, and even a dummy API we'll use to simulate our drop-shipper.
+By now, you should be familiar with the basic concepts of <%= link_to "creating an endpoint", "integration/basic_endpoints_tutorial" %>. In this tutorial, we'll walk through creating a fictional - yet more realistic - integration, complete with the <%= link_to "endpoint", "integration/terminology", "endpoints" %>, JSON request files, and even a dummy API we'll use to simulate our drop-shipper.
 
 ## Steps to Build the Integration
 
@@ -20,7 +20,7 @@ We will begin our integration with the simplest possible successful endpoint, an
 
 ### Create a Basic Endpoint
 
-As with the more basic [endpoint creation tutorial](creating_endpoints_tutorial), we'll use the [EndpointBase gem](https://github.com/spree/endpoint_base) to create our fulfillment endpoint.
+As with the more basic <%= link_to "endpoint creation tutorial", "integration/basic_endpoints_tutorial" %>, we'll use the [EndpointBase gem](https://github.com/spree/endpoint_base) to create our fulfillment endpoint.
 
 To start with, we need a new directory to house our integration files.
 

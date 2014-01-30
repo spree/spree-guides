@@ -18,7 +18,7 @@ To create an RMA for a shipped order, click the order's "Return Authorizations" 
 
 To use it, just increment the quantities for each line item to indicate how many items are being returned. The form will automatically calculate the RMA value based on the sale price of the item(s), but you will have to manually input this value into the "Amount" field. This gives you a chance to adjust for handling fees, restocking fees, damages, etc.
 
-Input the reason for the return, and select the [Stock Location](stock_locations) the item is coming back to. Click the "Continue" button.
+Input the reason for the return, and select the <%= link_to "Stock Location", "user/stock_locations" %> the item is coming back to. Click the "Continue" button.
 
 Now you just need to wait for the package to be received at your location.
 

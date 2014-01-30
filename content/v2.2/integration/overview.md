@@ -17,11 +17,11 @@ Messages are the core of the Spree Commerce hub. A single action within a storef
 <pre class="headers"><code>Basic message structure</code></pre>
 <%= json :message %>
 
-For more details on messages please refer to the [Message Basics Guide](/integration/message_basics.html), to review specific message structures and examples please refer to the [Message Overview Guide](/integration/messages_overview.html).
+For more details on messages please refer to the <%= link_to "Message Basics Guide", "integration/message_basics" %>, to review specific message structures and examples please refer to the <%= link_to "Messages Overview Guide", "integration/messages_overview" %>
 
 ## Architecture
 
-The Spree Commerce hub is a fully managed commercial SaaS product, that leverages our open source experience to provide a unique and flexible integration environment. Each integration (such as Quickbooks, NetSuite, Mandrill, Quiet Logistics) are provided by a single standalone [endpoint](/integration/terminology.html#endpoints) application. 
+The Spree Commerce hub is a fully managed commercial SaaS product, that leverages our open source experience to provide a unique and flexible integration environment. Each integration (such as Quickbooks, NetSuite, Mandrill, Quiet Logistics) are provided by a single standalone <%= link_to "endpoint", "integration/terminology", "service-responses" %> application. 
 
 We are committed to open sourcing all endpoint applications (where possible), along with providing extensive documentation and support for creating your own custom endpoints to further extend the integration possibilities available.
 
@@ -29,7 +29,7 @@ Each official endpoint application is hosted as part of the hub, but can also be
 
 ## Message Flow
 
-The hub uses a dual-queue configuration to handle the processing of messages, each received message can be fanned out to one ore more [Integrations](/integration/terminology.html#integrations) by way of [Mappings](/integration/terminology.html#mappings).
+The hub uses a dual-queue configuration to handle the processing of messages, each received message can be fanned out to one or more <%= link_to "endpoints", "integration/terminology", "integrations" %> by way of <%= link_to "mappings", "integration/terminology", "mappings" %>.
 
 ![Message Flow](/images/integration/message_flow.gif)
 

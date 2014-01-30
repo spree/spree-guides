@@ -7,7 +7,7 @@ title: Testing Tools
 There are many ways to test Endpoints, in the next sections we will cover some of them.
 
 ***
-For detailed information about Endpoints, check out the [endpoints](terminology#endpoints) section of the Terminology guide.
+For detailed information about Endpoints, check out the <%= link_to "endpoints", "integration/terminology", "endpoints" %> section of the Terminology guide.
 ***
 
 ## Curl
@@ -127,9 +127,9 @@ We used the ruby script above in the development of the service `get_order_by_nu
 
 All testing methods detailed before try to reproduce the requests made by the Spree Hub to your Endpoint.
 
-But only the Spree Hub Connector Testing Tool makes real tests, when you send a message through it, the message will be inserted in the Spree Hub Incoming Queue via [Hub API](/integration/push.html), the Spree Hub will process the message, move it to the Accepted Queue then make a request to your Endpoint with all configured parameters.
+But only the Spree Hub Connector Testing Tool makes real tests, when you send a message through it, the message will be inserted in the Spree Hub Incoming Queue via <%= link_to "Hub API", "integration/push" %>, the Spree Hub will process the message, move it to the Accepted Queue then make a request to your Endpoint with all configured parameters.
 
-In order to use the Spree Hub Connector Testing Tool you have to install the `spree_hub_connector` gem and configure your integration as detailed in the [Configuration Guide](/integration/configuration.html).
+In order to use the Spree Hub Connector Testing Tool you have to install the `spree_hub_connector` gem and configure your integration as detailed in the <%= link_to "Configuration Guide", "integration/configuration" %>.
 
 After its installation you will be able to access it through the Test tab.
 

@@ -105,7 +105,7 @@ end
 ```
 
 ***
-To learn more about the storefront's built-in preferences, see the [Preferences guide](/developer/preferences).
+To learn more about the storefront's built-in preferences, see the <%= link_to "Preferences guide", "developer/preferences" %>.
 ***
 
 Save your changes, then stop and restart your server to load the new configuration information. Now, when you go to checkout, you will see the new "Company" field.

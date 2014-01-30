@@ -5,7 +5,7 @@ section: tutorial
 
 ## Introduction
 
-This tutorial continues where we left off in the [Getting Started](getting_started_tutorial) tutorial. Now that we have a basic Spree store up and running, let's spend some time customizing it. The easiest way to do this is by using Spree extensions.
+This tutorial continues where we left off in the <%= link_to "Getting Started tutorial", "developer/getting_started_tutorial" %> tutorial. Now that we have a basic Spree store up and running, let's spend some time customizing it. The easiest way to do this is by using Spree extensions.
 
 ### What is a Spree Extension?
 
@@ -94,7 +94,7 @@ end
 
 ### Adding Our Extension to the Spree Application
 
-Before we continue development of our extension, let's add it to the Spree application we created in the [last tutorial](/developer/getting_started.html). This will allow us to see how the extension works with an actual Spree store while we develop it.
+Before we continue development of our extension, let's add it to the Spree application we created in the <%= link_to "last tutorial", "developer/getting_started_tutorial" %>. This will allow us to see how the extension works with an actual Spree store while we develop it.
 
 Within the `mystore` application directory, add the following line to the bottom of our `Gemfile`:
 

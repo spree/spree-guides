@@ -411,7 +411,7 @@ end
 
 Split shipments are a new feature as of Spree 2.0 that addresses the needs of complex Spree stores that require sophisticated shipping and warehouse logic. This includes detailed inventory management and allows for shipping from multiple locations.
 
-![image](../images/developer/core/split_shipments_checkout.png)
+![image](/images/developer/core/split_shipments_checkout.png)
 
 ### Creating Proposed Shipments
 

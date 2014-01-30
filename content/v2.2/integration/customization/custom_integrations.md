@@ -8,7 +8,7 @@ Customization is one of the key features of Spree Commerce, every merchant has t
 
 The hub allows you to use its powerful messaging and routing features to connect your own custom endpoints, allowing you to integrate in-house systems into your existing workflows.
 
-We've created several [Tutorials](/integration/basic_endpoints_tutorial.html) that walk you through creating a number of different endpoints.
+We've created several <%= link_to "Tutorials", "integration/basic_endpoints_tutorial" %> that walk you through creating a number of different endpoints.
 
 Once you've created your endpoint the next step is to document the services available on the endpoint, and any configuration required to use those services. This configuration detail is contained in a `endpoint.json` file which must be available at the root path of your application.
 
@@ -17,7 +17,7 @@ The hub uses the details within this file to advertise the integration to the Sp
 
 ## Endpoint.json
 
-When configuring an Integration using the Spree Hub Connector the information from the `endpoint.json` is used to populate a [mapping](/integration/mapping_basics.html) with default configuration for each configured service.
+When configuring an Integration using the Spree Hub Connector the information from the `endpoint.json` is used to populate a <%= link_to "mapping", "integration/mapping_basics" %>with default configuration for each configured service.
 
 The file contains some basic details about your endpoint and lists all the available services including which messages you recommend the service process and all configuration details (like parameters, filters, identifiers that the service may require).
 

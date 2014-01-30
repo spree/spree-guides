@@ -13,7 +13,7 @@ functional requirements, including:
 
 For more detailed information and a step-by-step tutorial on creating
 extensions for Spree be sure to checkout the
-[Extensions](extensions_tutorial.html) guide.
+<%= link_to "Extensions guide", "developer/extensions_tutorial" %>.
 
 ### Managing Customizations
 
@@ -32,7 +32,7 @@ business's operating procedures, branding, or provide a unique feature.
 
 All application specific customizations are stored within the host
 application where Spree is installed (please see the Installation
-section of the [Getting Started with Spree](getting_started_tutorial.html) guide,
+section of the <%= link_to "Getting Started with Spree", "developer/getting_started_tutorial" %> guide,
 for how to setup the host application). Application customizations are
 not generally shared or re-used in any way.
 
@@ -68,14 +68,14 @@ then need to choose the correct option to achieve the desired changes.
 
 #### View Customizations
 
-Allows you to change and/or extend the look and feel of a Spree store (and its administration system). For details see the <%= link_to "View Customization", "developer/customization/view" %> guide.
+Allows you to change and/or extend the look and feel of a Spree store (and its administration system). For details see the <%= link_to "View Customization", "developer/view" %> guide.
 
 #### Asset Customizations
 
 Allows changing the static assets provided by Spree, this includes
-stylesheets, JavaScript files and images. For details see the <%= link_to "Asset Customization", "developer/customization/asset" %> guide.
+stylesheets, JavaScript files and images. For details see the <%= link_to "Asset Customization", "developer/asset" %> guide.
 
 #### Logic Customizations
 
 Enables the changing and/or extension of the logic of Spree to meet your
-specific business requirements. For details see the <%= link_to "Logic Customization", "developer/customization/view" %> guide.
+specific business requirements. For details see the <%= link_to "Logic Customization", "developer/view" %> guide.
