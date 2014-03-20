@@ -32,10 +32,6 @@ Those reading these guides are likely intermediate- to advanced-level developers
 
 The audience for guides in the /developer directory includes developers from beginners to advanced. They are expected to already be familiar with Ruby and Rails, but may not have as much experience with deployment and integration with external services.
 
-### Integration
-
-Consumers of this documentation are developers with intermediate to advanced skills. They should already be well-versed in Ruby and Rails; familiar with the core Spree application; and have knowledge of integrating with external services.
-
 ### Release Notes
 
 Developers of all degrees of experience are the audience for these documents.
