@@ -20,6 +20,9 @@ end
 compile "/static/favicon.ico" do
 end
 
+compile "/static/google04bf30ab420c4b3b.html" do
+end
+
 compile "/release_notes/" do
   filter :pretty_urls
   filter :fenced_code_blocks
