@@ -152,8 +152,6 @@ end
 route '/release_notes/*/' do
   location = item.identifier.gsub('/release_notes/', '/release_notes/spree_')
   location.chop + ".html"
-=======
-  layout 'upgrades'
 end
 
 route "/release_notes/*/" do
@@ -163,7 +161,6 @@ end
 
 route "/upgrades/" do
   item.identifier.chop + "/index.html"
->>>>>>> Namespace guides to v2.1 path
 end
 
 route "/upgrades/*" do
