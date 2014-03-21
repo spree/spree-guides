@@ -200,13 +200,13 @@ pre.headers code {
   width: 100%;
   height: 400px;
   position: absolute;
-  background: url("/shared/images/api-objects-bg.png") no-repeat center;
+  background: url("../../shared/images/api-objects-bg.png") no-repeat center;
   z-index: 0;
 }
 
 #subheader {
   padding: 35px 0;
-  background: url("/shared/images/subheader_bg.png") repeat center top;
+  background: url("../../shared/images/subheader_bg.png") repeat center top;
 }
 .home #subheader {
   padding-bottom: 50px;
