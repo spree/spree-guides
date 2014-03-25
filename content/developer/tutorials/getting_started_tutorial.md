@@ -16,11 +16,7 @@ To run Spree 2.2 you need the latest Rails version, 4.0.4.
 In most cases, the easiest way to install Rails is to take advantage of RubyGems:
 
 ```bash
-<<<<<<< HEAD
-$ gem install rails -v 4.0.1
-=======
 $ gem install rails -v 4.0.4
->>>>>>> d0dca6b... Update GS guide to use Rails 4.0.4
 ```
 
 ### Installing Bundler
