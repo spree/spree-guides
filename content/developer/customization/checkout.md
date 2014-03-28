@@ -391,6 +391,11 @@ checkout_flow do
   go_to_state :complete
 end```
 
+### The Checkout View
+After creating a checkout step, you'll need to create a partial for the checkout
+controller to load for your custom step. If your additonal checkout step is
+`new_step` you'll need to a `spree/checkout/_new_step.html.erb` partial.
+
 ### The Checkout "Breadcrumb"
 
 The Spree code automatically creates a progress "breadcrumb" based on the
