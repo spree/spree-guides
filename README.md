@@ -1,3 +1,5 @@
+# NOTICE: Spree Guides have moved into Spree Core Repository now as of https://github.com/spree/spree/commit/b3a8969f0ffb3ec3faa507da7785aedbefedfe44.  Please submit documentation Pull Requests at https://github.com/spree/spree now.  Thank You!
+
 # api.spreecommerce.com
 
 This is a Spree API resource built with [nanoc][nanoc].
